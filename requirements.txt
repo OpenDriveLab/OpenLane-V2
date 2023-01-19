@@ -1,0 +1,9 @@
+tqdm
+jupyter
+matplotlib
+numpy>=1.22.0
+scikit-learn
+similaritymeasures
+opencv-python
+scipy==1.8.0
+ortools==9.2.9972
