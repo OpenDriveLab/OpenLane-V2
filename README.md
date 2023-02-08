@@ -16,8 +16,6 @@
 **[English](./README.md) | [中文](./README-zh-hans.md)**
 
 
-*In case of ambiguity among versions, the English version shall prevail.*
-
 <img src="./imgs/poster.gif" width="696px">
 
 </div>
