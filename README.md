@@ -13,7 +13,7 @@
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
 </a>
 
-**[English](./README.md) | [中文(待定)](./README-zh-hans.md)**
+**[English](./README.md) | [中文](./README-zh-hans.md)**
 
 
 *In case of ambiguity among versions, the English version shall prevail.*
