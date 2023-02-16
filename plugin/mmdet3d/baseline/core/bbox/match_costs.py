@@ -1,7 +1,7 @@
 # ==============================================================================
 # Binaries and/or source for the following packages or projects 
 # are presented under one or more of the following open source licenses:
-# preprocess.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
+# match_costs.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
 #
 # Contact wanghuijie@pjlab.org.cn if you have any issue.
 #
@@ -18,15 +18,24 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# =============================================================================='
+# ==============================================================================
 
-from openlanev2.io import io
-from openlanev2.preprocessing import collect
+import torch
 
-root_path = './OpenLane-V2'
-for file in io.os_listdir(root_path):
-    if file.endswith('json'):
-        subset = file.split('.')[0]
-        for split, segments in io.json_load(f'{root_path}/{file}').items():
-            point_interval = 20 if split == 'train' else 1
-            collect(root_path, {split: segments}, f'{subset}_{split}', point_interval=point_interval)
+from mmdet.core.bbox.match_costs.builder import MATCH_COST
+
+
+@MATCH_COST.register_module()
+class LaneL1Cost:
+    r"""
+    Notes
+    -----
+    Adapted from https://github.com/open-mmlab/mmdetection/blob/master/mmdet/core/bbox/match_costs/match_cost.py#L11.
+
+    """
+    def __init__(self, weight=1.):
+        self.weight = weight
+
+    def __call__(self, lane_pred, gt_lanes):
+        lane_cost = torch.cdist(lane_pred, gt_lanes, p=1)
+        return lane_cost * self.weight
