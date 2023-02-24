@@ -1,6 +1,6 @@
 <div id="top" align="center">
 
-# OpenLane-V2
+# OpenLane-V2 [^*]
 **The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving.**
 
 <a href="#data">
@@ -19,6 +19,8 @@
 <img src="./imgs/poster.gif" width="696px">
 
 </div>
+
+[^*]: The dataset, OpenLane-V2 at Shanghai AI Lab, is named as RoadGenome at Huawei and publically as OpenLane-Huawei.
 
 ## Table of Contents
 - [Highlight](#highlight---why-we-are-exclusive)
