@@ -1,7 +1,7 @@
 # ==============================================================================
 # Binaries and/or source for the following packages or projects 
 # are presented under one or more of the following open source licenses:
-# preprocess.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
+# loading.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
 #
 # Contact wanghuijie@pjlab.org.cn if you have any issue.
 #
@@ -18,15 +18,23 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# =============================================================================='
+# ==============================================================================
 
-from openlanev2.io import io
-from openlanev2.preprocessing import collect
+import numpy as np
 
-root_path = './OpenLane-V2'
-for file in io.os_listdir(root_path):
-    if file.endswith('json'):
-        subset = file.split('.')[0]
-        for split, segments in io.json_load(f'{root_path}/{file}').items():
-            point_interval = 20 if split == 'train' else 1
-            collect(root_path, {split: segments}, f'{subset}_{split}', point_interval=point_interval)
+import mmcv
+from mmdet.datasets import PIPELINES
+from mmdet3d.datasets.pipelines import LoadMultiViewImageFromFiles
+
+
+@PIPELINES.register_module()
+class CustomLoadMultiViewImageFromFiles(LoadMultiViewImageFromFiles):
+
+    def __call__(self, results):
+        filename = results['img_paths']
+        img = [mmcv.imread(name, self.color_type) for name in filename]
+        if self.to_float32:
+            img = [i.astype(np.float32) for i in img]
+        results['img'] = img
+        results['img_shape'] = [i.shape for i in results['img']]
+        return results

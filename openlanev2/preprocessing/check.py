@@ -21,6 +21,7 @@
 # ==============================================================================
 
 import numpy as np
+from iso3166 import countries
 from functools import reduce
 
 
@@ -34,12 +35,23 @@ def check_results(results : dict) -> None:
         Dict storing predicted results.
 
     """
+    valid = True
+
     if not isinstance(results, dict):
         raise Exception(f'Type of result should be dict')
 
-    for key in ['method', 'authors']:
-        if key not in results:
-            raise Exception(f'Miss key [{key}].')
+    for key in ['method', 'authors', 'e-mail', 'institution / company', 'country / region']:
+        if key in results:
+            if not isinstance(results[key], str):
+                raise Exception(f'Type of value in key [{key}] should be str')
+            if key == 'country / region':
+                try:
+                    countries.get(results[key])
+                except Exception:
+                    raise Exception(f'Please specify a valid [{key}] according to ISO3166')
+        else:
+            valid = False
+            print(f'\n*** Missing key [{key}] for a valid submission ***\n')
 
     for key in ['results']:
         if key not in results:
@@ -66,9 +78,8 @@ def check_results(results : dict) -> None:
                     if k not in instance:
                         raise Exception(f'Miss key [results/{token}/predictions/{key}/k].')
                 if key == 'traffic_element':
-                    for k in ['category', 'attribute']:
-                        if k not in instance:
-                            raise Exception(f'Miss key [results/{token}/predictions/{key}/k].')
+                    if 'attribute' not in instance:
+                        raise Exception(f'Miss key [results/{token}/predictions/{key}/k].')
 
                 points = instance['points']
                 if not isinstance(points, np.ndarray):
@@ -101,4 +112,6 @@ def check_results(results : dict) -> None:
             raise Exception(f'Type of value in key [results/{token}/predictions/topology_lcte] should be np.ndarray')
         topology_lcte = np.array(topology_lcte)
         if not (topology_lcte.ndim == 2 and topology_lcte.shape[0] == len(ids['lane_centerline']) and topology_lcte.shape[1] == len(ids['traffic_element'])):
-            raise Exception(f'Shape of adjacent matrix of [results/{token}/predictions/topology_lcte] should be (#lane_centerline, #lane_centerline) but not {topology_lcte.shape}')
+            raise Exception(f'Shape of adjacent matrix of [results/{token}/predictions/topology_lcte] should be (#lane_centerline, #traffic_element) but not {topology_lcte.shape}')
+
+    return valid

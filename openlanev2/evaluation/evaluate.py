@@ -22,7 +22,6 @@
 
 import numpy as np
 from tqdm import tqdm
-from sklearn.metrics import accuracy_score
 
 from .f_score import f1
 from .distance import pairwise, chamfer_distance, frechet_distance, iou_distance
@@ -516,7 +515,7 @@ def _mAP_topology_lcte(gts, preds, distance_thresholds):
     
     return np.hstack(acc).mean()
 
-def evaluate(ground_truth, predictions):
+def evaluate(ground_truth, predictions, verbose=True):
     r"""
     Evaluate the road structure cognition task.
 
@@ -574,7 +573,7 @@ def evaluate(ground_truth, predictions):
         'iou': {},
     }
 
-    for token in tqdm(gts.keys(), desc='calculating distances:', ncols=80):
+    for token in tqdm(gts.keys(), desc='calculating distances:', ncols=80, disable=not verbose):
 
         mask = pairwise(
             [gt['points'] for gt in gts[token]['lane_centerline']],
@@ -603,7 +602,7 @@ def evaluate(ground_truth, predictions):
 
     metrics = {
         'OpenLane-V2 Score': {},
-        'F-Score': {},
+        'F-Score for 3D Lane': {},
     }
 
     """
@@ -657,6 +656,6 @@ def evaluate(ground_truth, predictions):
         F-Score
     """
 
-    metrics['F-Score']['score'] = f1.bench_one_submit(gts=gts, preds=preds)
+    metrics['F-Score for 3D Lane']['score'] = f1.bench_one_submit(gts=gts, preds=preds)
 
     return metrics

@@ -32,8 +32,8 @@
 - [News](#news)
 - [Data](#data)
 - [Devkit](#devkit)
-- [Plugin](#plugin)
 - [Get Started](#get-started)
+- [Train a Model](#train-a-model)
 - [Benchmark and Leaderboard](#benchmark-and-leaderboard-to-be-released)
 - [Citation](#citation)
 - [License](#license)
@@ -138,17 +138,10 @@ For more details on the API, please refer to [devkit](./docs/devkit.md).
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-## Plugin
-Plug-ins to prevail deep learning frameworks for training models would be jointly maintained with the community.
-Will be released soon.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 ## Get Started
 Please follow the steps below to get familiar with the OpenLane-V2 dataset.
 
-1. Run the following commands to install the environment for setting up the dataset (with GPU support for plugin):
+1. Run the following commands to install the environment for setting up the dataset:
 
 ```sh
 git clone https://github.com/OpenDriveLab/OpenLane-V2.git
@@ -176,13 +169,44 @@ cd ../..
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Benchmark and Leaderboard (To be released)
+
+## Train a Model
+Plug-ins to prevail deep learning frameworks for training models are provided to start training models on the OpenLane-V2 dataset.
+We appreciate your valuable feedback and contributions to plug-ins on different frameworks.
+
+### mmdet3d
+
+The [plug-in](./plugin/mmdet3d/) to MMDetection3d is built on top of [mmdet3d v1.0.0rc6](https://github.com/open-mmlab/mmdetection3d/tree/v1.0.0rc6) and tested under:
+- Python 3.8.15
+- PyTorch 1.9.1
+- CUDA 11.1
+- GCC 5.4.0
+- mmcv-full==1.5.2
+- mmdet==2.26.0
+- mmsegmentation==0.29.1
+
+Please follow the [instruction](https://github.com/open-mmlab/mmdetection3d/blob/v1.0.0rc6/docs/en/getting_started.md) to install mmdet3d.
+Assuming OpenLane-V2 is installed under `OpenLane-V2/` and mmdet3d is built under `mmdetection3d/`, create a soft link to the plug-in file:
+```
+└── mmdetection3d
+    └── projects
+        ├── example_project
+        └── openlanev2 -> OpenLane-V2/plugin/mmdet3d
+```
+Then you can train or evaluate a model using the config `mmdetection3d/projects/openlanev2/configs/baseline.py`.
+Options can be passed to enable supported functions during evaluation, such as `--eval-options dump=True dump_dir=/PATH/TO/DUMP` to save pickle file for submission and `--eval-options visualization=True visualization_dir=/PATH/TO/VIS` for visualization.
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+## Benchmark and Leaderboard
 We will provide an initial benchmark on the OpenLane-V2 dataset, and you are welcome to add your work here!
 Please stay tuned for the release of the benchmark.
 
-| Method | OLS (main metric) | $\text{DET}_{l}$ | $\text{DET}_{t}$ | $\text{TOP}_{ll}$ | $\text{TOP}_{lt}$ | $\text{F-Score}$* |
+| Method | OLS (main metric) (%) | $\text{DET}_{l}$ (%) | $\text{DET}_{t}$ (%) | $\text{TOP}_{ll}$ (%) | $\text{TOP}_{lt}$ (%) | $\text{F-Score}$* (%) |
 | - | - | - | - | - | - | - |
-| - | - | - | - | - | - | - |
+| Baseline | 0.29 | 0.08 | 0.31 | 0.00 | 0.01 | 8.56 |
 
 <sub>* F-Score is not taken into consideration in both the challenge and leaderboard.</sub>
 
