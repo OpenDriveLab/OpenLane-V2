@@ -4,7 +4,14 @@
 | Subset | Google Drive <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> | Baidu Yun <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/> | md5 | Size |
 | --- | --- | --- | --- | --- |
 | subset_A | [example](https://drive.google.com/file/d/1TjcGaHSd1tTMl0rsaxdP_GWnKf2CiDIx/view?usp=sharing) | [example](https://pan.baidu.com/s/1BytNMBryAVKCDSlBoDANNA?pwd=bxb9) | cd145ded28f1366475cd81aff9476df4 | ~360M |
-| subset_A | coming soon | coming soon | - | - |
+| subset_A | image_0 | image_0 | 8ade7daeec1b64f8ab91a50c81d812f6 | ~15G |
+|  | image_1 | image_1 | c78e776f79e2394d2d5d95b7b5985e0f | ~15G |
+|  | image_2 | image_2 | 4bf09079144aa54cb4dcd5ff6e00cf79 | ~15G |
+|  | image_3 | image_3 | fd9e64345445975f462213b209632aee | ~15G |
+|  | image_4 | image_4 | ae07e48c88ea2c3f6afbdf5ff71e9821 | ~15G |
+|  | image_5 | image_5 | df62c1f6e6b3fb2a2a0868c78ab19c92 | ~15G |
+|  | image_6 | image_6 | 7bff1ce30329235f8e0f25f6f6653b8f | ~15G |
+|  | image_7 | image_7 | c73af4a7aef2692b96e4e00795120504 | ~22G |
 | subset_B | coming soon | coming soon | - | - |
 
 ## Preprocess

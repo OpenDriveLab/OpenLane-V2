@@ -149,7 +149,7 @@ cd OpenLane-V2
 conda create -n openlanev2 python=3.8 -y
 conda activate openlanev2
 pip install -r requirements.txt
-python setup.py install
+python setup.py develop
 ```
 
 2. Use [links](./data/README.md#download) to download data manually from <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> or <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/>. 
@@ -193,7 +193,7 @@ Assuming OpenLane-V2 is installed under `OpenLane-V2/` and mmdet3d is built unde
         ├── example_project
         └── openlanev2 -> OpenLane-V2/plugin/mmdet3d
 ```
-Then you can train or evaluate a model using the config `mmdetection3d/projects/openlanev2/configs/baseline.py`.
+Then you can train or evaluate a model using the config `mmdetection3d/projects/openlanev2/configs/baseline.py`, whose path is replaced accordingly.
 Options can be passed to enable supported functions during evaluation, such as `--eval-options dump=True dump_dir=/PATH/TO/DUMP` to save pickle file for submission and `--eval-options visualization=True visualization_dir=/PATH/TO/VIS` for visualization.
 
 
@@ -208,7 +208,7 @@ Please stay tuned for the release of the benchmark.
 | - | - | - | - | - | - | - |
 | Baseline | 0.29 | 0.08 | 0.31 | 0.00 | 0.01 | 8.56 |
 
-<sub>* F-Score is not taken into consideration in both the challenge and leaderboard.</sub>
+<sub>* F-Score for lane detection is not taken into consideration in both the challenge and leaderboard.</sub>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

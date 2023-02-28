@@ -28,5 +28,5 @@ for file in io.os_listdir(root_path):
     if file.endswith('json'):
         subset = file.split('.')[0]
         for split, segments in io.json_load(f'{root_path}/{file}').items():
-            point_interval = 20 if split == 'train' else 1
+            point_interval = 1 if split == 'train' else 20
             collect(root_path, {split: segments}, f'{subset}_{split}', point_interval=point_interval)
