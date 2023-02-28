@@ -4,7 +4,7 @@
 **The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving.**
 
 <a href="#data">
-  <img alt="OpenLane-v2: v0.1" src="https://img.shields.io/badge/OpenLane--V2-v0.1-blueviolet"/>
+  <img alt="OpenLane-v2: v1.0" src="https://img.shields.io/badge/OpenLane--V2-v1.0-blueviolet"/>
 </a>
 <a href="#devkit">
   <img alt="devkit: v0.1.0" src="https://img.shields.io/badge/devkit-v0.1.0-blueviolet"/>
@@ -13,7 +13,7 @@
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
 </a>
 
-**[English](./README.md) | [中文](./README-zh-hans.md)**
+**English | [中文](./README-zh-hans.md)**
 
 
 <img src="./imgs/poster.gif" width="696px">
@@ -42,7 +42,7 @@
 
 ### $\color{Magenta}\fcolorbox{white}{white}{The world is three-dimensional - Introducing 3D lane}$ 
 Previous datasets annotate lanes on images in the perspective view. Such a type of 2D annotation is insufficient to fulfill real-world requirements.
-Following the [OpenLane](https://github.com/OpenPerceptionX/OpenLane) dataset, we annotate $\color{blue}\fcolorbox{white}{white}{lanes in 3D space}$ to reflect their properties in the real world.
+Following the [OpenLane](https://github.com/OpenDriveLab/OpenLane) dataset, we annotate $\color{blue}\fcolorbox{white}{white}{lanes in 3D space}$ to reflect their properties in the real world.
 
 ### $\color{Magenta}\fcolorbox{white}{white}{Be aware of traffic signals - Recognizing Extremely Small road elements}$ 
 Not only preventing collision but also facilitating efficiency is essential. 
@@ -76,7 +76,7 @@ $$
 The metrics of different subtasks are described below.
 
 ### 3D Lane Detection 🛣️
-The [OpenLane](https://github.com/OpenPerceptionX/OpenLane) dataset, which is the first real-world and the largest scaled 3D lane dataset to date, provides lane line annotations in 3D space.
+The [OpenLane](https://github.com/OpenDriveLab/OpenLane) dataset, which is the first real-world and the largest scaled 3D lane dataset to date, provides lane line annotations in 3D space.
 Similarly, we annotate 3D lane centerlines and include the F-Score for evaluating predicted results  of undirected lane centerlines.
 Furthermore, we define the subtask of 3D lane detection as detecting directed 3D lane centerlines from the given multi-view images covering the whole horizontal FOV.
 The instance-level evaluation metric of average precision $\text{DET}_{l}$ is utilized to measure the detection performance on lane centerlines (l).
@@ -111,6 +111,9 @@ Adapted from the task of link prediction, $\text{TOP}$ is used for topology amon
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## News
+- [2023/02]
+  * Dataset `v1.0`: Data of `subset_A` released.
+  * Baseline model released.
 - [2023/01]
   * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
   * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
@@ -119,7 +122,7 @@ Adapted from the task of link prediction, $\text{TOP}$ is used for topology amon
 
 ## Data
 The OpenLane-V2 dataset is a large-scale dataset for scene structure perception and reasoning in the field of autonomous driving. 
-Following [OpenLane](https://github.com/OpenPerceptionX/OpenLane), the first 3D lane dataset, we provide lane annotations in 3D space.
+Following [OpenLane](https://github.com/OpenDriveLab/OpenLane), the first 3D lane dataset, we provide lane annotations in 3D space.
 The difference is that instead of lane lines, we annotate lane centerlines, which can be served as the trajectory for autonomous vehicles.
 Besides, we provide annotations on traffic elements (traffic lights and road signs) and their attribute, and the topology relationships among lane centerlines and between lane centerlines and traffic elements.
 
@@ -127,6 +130,8 @@ The dataset is divided into two subsets.
 **The `subset_A` serves as the primary subset and is utilized for the coming challenges and leaderboard, in which no external data, including the other subset, is allowed**.
 The `subset_B` can be used to test the generalization ability of the model.
 For more details, please refer to the corresponding pages: [use of data](./data/README.md), [notes of annotation](./docs/annotation.md), and [dataset statistics](./docs/statistics.md).
+
+[Download](./data/README.md#download) now to discover our dataset!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -149,17 +154,17 @@ cd OpenLane-V2
 conda create -n openlanev2 python=3.8 -y
 conda activate openlanev2
 pip install -r requirements.txt
-python setup.py install
+python setup.py develop
 ```
 
-2. Use [links](./data/README.md#download) to download data manually from <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> or <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/>. 
+2. Use [links](./data/README.md#download) to download data manually from [OpenDataLab](https://opendatalab.com/OpenLane-V2/download), Google Drive<img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/>, and Baidu Yun<img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/>.
 Then put them into the `data/OpenLane-V2/` folder and unzip them. 
 The resulting folder hierarchy is described [here](./data/README.md#hierarchy).
-Alternatively, use the following commands:
+Or use the following commands to download example data for a quick glance at the dataset:
 
 ```sh
 cd data/OpenLane-V2
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1TjcGaHSd1tTMl0rsaxdP_GWnKf2CiDIx' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1TjcGaHSd1tTMl0rsaxdP_GWnKf2CiDIx" -O OpenLane-V2-subset-A-example.tar
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6" -O OpenLane-V2_sample.tar
 md5sum -c openlanev2.md5
 tar -xvf *.tar
 cd ../..
@@ -193,7 +198,7 @@ Assuming OpenLane-V2 is installed under `OpenLane-V2/` and mmdet3d is built unde
         ├── example_project
         └── openlanev2 -> OpenLane-V2/plugin/mmdet3d
 ```
-Then you can train or evaluate a model using the config `mmdetection3d/projects/openlanev2/configs/baseline.py`.
+Then you can train or evaluate a model using the config `mmdetection3d/projects/openlanev2/configs/baseline.py`, whose path is replaced accordingly.
 Options can be passed to enable supported functions during evaluation, such as `--eval-options dump=True dump_dir=/PATH/TO/DUMP` to save pickle file for submission and `--eval-options visualization=True visualization_dir=/PATH/TO/VIS` for visualization.
 
 
@@ -208,7 +213,7 @@ Please stay tuned for the release of the benchmark.
 | - | - | - | - | - | - | - |
 | Baseline | 0.29 | 0.08 | 0.31 | 0.00 | 0.01 | 8.56 |
 
-<sub>* F-Score is not taken into consideration in both the challenge and leaderboard.</sub>
+<sub>* F-Score for lane detection is not taken into consideration in both the challenge and leaderboard.</sub>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

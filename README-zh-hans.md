@@ -1,19 +1,19 @@
 <div id="top" align="center">
 
-# OpenLane-V2
+# OpenLane-Huawei
 **全球首个自动驾驶道路结构感知和推理基准。**
 
 <a href="#数据">
-  <img alt="OpenLane-v2: v0.1" src="https://img.shields.io/badge/OpenLane--V2-v0.1-blueviolet"/>
+  <img alt="OpenLane-v2: v1.0" src="https://img.shields.io/badge/OpenLane--V2-v1.0-blueviolet"/>
 </a>
 <a href="#开发工具">
   <img alt="devkit: v0.1.0" src="https://img.shields.io/badge/devkit-v0.1.0-blueviolet"/>
 </a>
-<a href="#引用">
+<a href="#许可说明">
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
 </a>
   
-**[中文](./README-zh-hans.md) | [English](./README.md)**
+**中文 | [English](./README.md)**
   
   
 <img src="./imgs/poster.gif" width="696px">
@@ -31,30 +31,29 @@
 - [信息发布](#信息发布)
 - [数据](#数据)
 - [开发工具](#开发工具)
-- [实用插件](#实用插件)
 - [入门指南](#入门指南)
+- [训练模型](#训练模型)
 - [基准和排行榜](#基准和排行榜)
 - [引用](#引用)
 - [许可说明](#许可说明)
 
 ## 特色 - 我们为什么是独一无二的？
 ### $\color{Magenta}\fcolorbox{white}{white}{三维场景，3D车道}$
-<!-- 针对自动驾驶场景，现有数据集一般都是在图像上标注车道线，但真实的行车场景是3D，2D车道线数据无法在一些特殊场景确保车辆自动行驶，如上下坡、路面不平整等场景。
-[OpenLane](https://github.com/OpenPerceptionX/OpenLane) 是第一个真实场景3D车道线数据集，我们提供  $\color{blue}{3D车道中心线}$ 真值以反映它们在真实环境中的特性。 -->
+
 道路环境需要怎样的建模才能满足车辆自动驾驶功能的需求？
 
 以往的数据集一般都在2D图像上标注车道，但在实际应用中，由于缺乏高度信息，2D车道数据无法支持车辆在上下坡、路面不平整等场景行驶，因此3D车道数据是不可或缺的。
 
-同我们之前的工作 [OpenLane](https://github.com/OpenDriveLab/OpenLane) 一致，OpenLane-V2提供三维车道标注。
+同我们之前的工作 [OpenLane](https://github.com/OpenDriveLab/OpenLane) 一致，OpenLane-Huawei 提供三维车道标注。
 ### $\color{Magenta}\fcolorbox{white}{white}{关注交通要素，确保行车规范}$
-在道路上平稳的行驶只是第一步，驾驶汽车还需要遵循环境中的 $\color{blue}{交通要素}$（交通灯，路标）信息指示，确保不违反当地交通法规，因此OpenLane-V2也提供了2D交通要素标注。
+在道路上平稳的行驶只是第一步，驾驶汽车还需要遵循环境中的 $\color{blue}{交通要素}$（交通灯，路标）信息指示，确保不违反当地交通法规，因此 OpenLane-Huawei 也提供了2D交通要素标注。
 
 交通要素在2D图像上尺寸大多都较小，检测领域中小目标检测一直是个热点，这也是该基准的挑战之一。
 
 ### $\color{Magenta}\fcolorbox{white}{white}{拓扑关系支撑场景结构化}$ 
 环境中交通要素应仅对其特定的车道有指示作用，遵循错误的信号将造成灾难性的后果，因此需要明确车道与交通要素的关系。环境中的车道也不应是割裂存在的，车道与车道的关系也同样重要。
 
-OpenLane-V2提供车道与车道、车道与交通要素之间的拓扑关系，打造结构化场景。
+OpenLane-Huawei 提供车道与车道、车道与交通要素之间的拓扑关系，打造结构化场景。
 
 自动驾驶汽车需要通过 $\color{blue}{推理}$ 捕捉正确的 $\color{blue}{拓扑关系}$ 以正确的方式行驶。
 我们希望这个数据集的建立可以促进 $\color{blue}{道路场景感知和推理}$ 任务的发展。
@@ -81,7 +80,7 @@ $$
 
 ### 3D车道线检测 🛣️
 
-[OpenLane](https://github.com/OpenPerceptionX/OpenLane) 数据集是迄今为止第一个真实世界和规模最大的 3D 车道数据集，提供 3D 空间下的车道线标注。
+[OpenLane](https://github.com/OpenDriveLab/OpenLane) 数据集是迄今为止第一个真实世界和规模最大的 3D 车道数据集，提供 3D 空间下的车道线标注。
 在OpenLane基础上，我们将 3D 车道检测的任务定义如下：从覆盖整个水平 FOV(视场角-Field Of View) 的多视图中检测带方向的 3D 车道中心线。
 用平均精度 $mAP_{LC}$ 指标评估车道中心线的检测性能。
 
@@ -123,41 +122,43 @@ $$
 
 
 ## 信息发布
+- [2023/02]
+  * 数据集 `v1.0`: `subset_A` 数据发布。
+  * 基模型发布。
 - [2023/01]
-  * 数据集 v0.1： OpenLane-V2 [数据集样本](data/OpenLane-V2/dataset-sample/)。
-  * 开发工具 v0.1： OpenLane-V2 开发工具。
+  * 数据集 `v0.1`： OpenLane-Huawei 数据集样本发布。
+  * 开发工具 `v0.1.0`： OpenLane-Huawei 开发工具发布。
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 ## 数据
 
-OpenLane-V2 数据集是自动驾驶领域用于道路结构感知和推理的大规模数据集。
-与 [OpenLane](https://github.com/OpenPerceptionX/OpenLane)数据集一致，我们提供三维空间中的车道真值。与之有区别的是，OenLane-V2提供的是车道中心线的3D标注，而OpenLane提供的是车道分割线3D标注。此外，我们还提供了交通标志(交通灯和路标)及其属性的2D框标注，和车道中心线之间以及车道中心线与交通要素之间的拓扑关系标注。
+OpenLane-Huawei 数据集是自动驾驶领域用于道路结构感知和推理的大规模数据集。
+与 [OpenLane](https://github.com/OpenDriveLab/OpenLane) 数据集一致，我们提供三维空间中的车道真值。与之有区别的是，OpenLane-Huawei 提供的是车道中心线的3D标注，而OpenLane提供的是车道分割线3D标注。此外，我们还提供了交通标志(交通灯和路标)及其属性的2D框标注，和车道中心线之间以及车道中心线与交通要素之间的拓扑关系标注。
 
 数据集分为两个子集。
 **`subset_A`作为主要子集，服务于即将到来的比赛和排行榜，比赛中不允许任何外部数据，包括本数据集其他子集**。
 `subset_B`可以用来测试模型的泛化能力。
-更多信息请参考对应的页面：[使用数据](./data/README.md)、[标注文档](./docs/annotation.md)与[数据统计](./docs/statistics.md).。
+更多信息请参考对应的页面：[使用数据](./data/README.md)、[标注文档](./docs/annotation.md)与[数据统计](./docs/statistics.md)。
+
+现在就[下载](./data/README.md#download)我们的数据集来发现更多!
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 ## 开发工具
 
-我们提供了一个开发工具来方便社区熟悉并使用 OpenLane-V2 数据集。
+我们提供了一个开发工具来方便社区熟悉并使用 OpenLane-Huawei 数据集。
 可以通过 `openlanv2` 的API实现数据集的使用，例如加载图像、加载元数据和评估结果。
 更多开发工具信息请参考[开发工具](./docs/devkit.md)。
-
-## 实用插件
-我们还将提供一个适配OpenLane-V2的深度学习框架插件，方便社区快速上手。即将发布。
 
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
 ## 入门指南
 
-按照以下步骤熟悉 OpenLane-V2 数据集：
+按照以下步骤熟悉 OpenLane-Huawei 数据集：
 
 1. 运行以下命令安装必要的工具包，完成研究环境准备：
 
@@ -167,45 +168,71 @@ cd OpenLane-V2
 conda create -n openlanev2 python=3.8 -y
 conda activate openlanev2
 pip install -r requirements.txt
-python setup.py install
+python setup.py develop
 ```
 
-2. 点击[链接](./data/README.md#download)从<img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/>或<img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/>下载数据。
+2. 点击[链接](./data/README.md#download)从 [OpenDataLab](https://opendatalab.com/OpenLane-V2/download), Google Drive<img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/>，或者百度云<img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/>。
 并将它们移动至 `data/OpenLane-V2/` 文件夹下解压。
 生成的目录结构应[如下](./data/README.md#hierarchy)所示。
-或者用这些命令来实现此步骤:
+或者用这些命令来下载数据集样本:
 
 ```sh
 cd data/OpenLane-V2
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1TjcGaHSd1tTMl0rsaxdP_GWnKf2CiDIx' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1TjcGaHSd1tTMl0rsaxdP_GWnKf2CiDIx" -O OpenLane-V2-subset-A-example.tar
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6" -O OpenLane-V2_sample.tar
 md5sum -c openlanev2.md5
 tar -xvf *.tar
 cd ../..
 ```
 
-3. 在 jupyter notebook 上运行 [tutorial](./tutorial.ipynb) 熟悉数据集与对应的开发工具。
+3. 在 jupyter notebook 上运行 [tutorial](./tutorial.ipynb) 来熟悉数据集与对应的开发工具。
 
 
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
+## 训练模型
+我们提供不同神经网络训练框架的插件来支持在我们的数据集上训练模型。
+如果缺少你常用的训练框架，我们欢迎你的提议或对插件的共同维护。
 
+### mmdet3d
+
+这个[插件](./plugin/mmdet3d/)基于 [mmdet3d v1.0.0rc6](https://github.com/open-mmlab/mmdetection3d/tree/v1.0.0rc6)，并且在以下的环境中进行过测试：
+- Python 3.8.15
+- PyTorch 1.9.1
+- CUDA 11.1
+- GCC 5.4.0
+- mmcv-full==1.5.2
+- mmdet==2.26.0
+- mmsegmentation==0.29.1
+
+请按照 mmdet3d 的[指引](https://github.com/open-mmlab/mmdetection3d/blob/v1.0.0rc6/docs/en/getting_started.md)来安装这个训练框架。
+假设这个数据集安装在 `OpenLane-V2/` 目录下，并且 mmdet3d 安装在 `mmdetection3d/` 目录下，你可以通过软连接的方式将该插件引入到训练框架中：
+```
+└── mmdetection3d
+    └── projects
+        ├── example_project
+        └── openlanev2 -> OpenLane-V2/plugin/mmdet3d
+```
+在将数据路径换成你的本地路径之后，你可以使用我们提供的 config 文件 `mmdetection3d/projects/openlanev2/configs/baseline.py` 来进行模型训练和各种 mmdet3d 中支持的操作。
+并且可以通过在对模型进行推理时输入不同的选项来获取不同的功能，已经实现的功能有：`--eval-options dump=True dump_dir=/PATH/TO/DUMP` 来存储用于上传测试集结果的文件；`--eval-options visualization=True visualization_dir=/PATH/TO/VIS` 来对模型输出进行可视化。
+
+<p align="right">(<a href="#top">回到顶部</a>)</p>
 
 ## 基准和排行榜
-我们将提供 OpenLane-V2 数据集的初始基准测试，欢迎您在这里添加您的工作!
+我们将提供 OpenLane-Huawei 数据集的初始基准测试，欢迎您在这里添加您的工作!
 基准和排行榜将在不久后发布，请持续关注。
 
-| Method | OLS (main metric) | $mAP_{LC}$ | $mAP_{TE}$ | $mAP_{LCLC}$ | $mAP_{LCTE}$ | F-Score* |
+| Method | OLS (main metric) (%) | $mAP_{LC}$ (%) | $mAP_{TE}$ (%) | $mAP_{LCLC}$ (%) | $mAP_{LCTE}$ (%) | F-Score* (%) |
 | - | - | - | - | - | - | - |
-| - | - | - | - | - | - | - |
+| Baseline | 0.29 | 0.08 | 0.31 | 0.00 | 0.01 | 8.56 |
 
-<sub>*在比赛和排行榜中不考虑 F-Score。
+<sub>*在比赛和排行榜中不考虑车道中心线检测的 F-Score。
   
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
 
 ## 引用
 
-使用 OpenLane-V2 时请使用如下引用：
+使用 OpenLane-Huawei 时请使用如下引用：
   
 ```bibtex
 @misc{ openlanev2_dataset,
@@ -238,7 +265,7 @@ cd ../..
 <p align="right">(<a href="#top">回到顶部</a>)</p>
 
 ## 许可说明
-使用 OpenLane-V2 数据集时，您需要在网站上注册并同意 [nuScenes](https://www.nuscenes.org/nuscenes) 和 [Argoverse 2](https://www.argoverse.org/av2.html) 数据集的使用条款。
+使用 OpenLane-Huawei 数据集时，您需要在网站上注册并同意 [nuScenes](https://www.nuscenes.org/nuscenes) 和 [Argoverse 2](https://www.argoverse.org/av2.html) 数据集的使用条款。
 
 本项目的发布受 [Apache License 2.0](./LICENSE)许可认证。
 

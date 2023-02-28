@@ -53,8 +53,14 @@ def collect(root_path : str, data_dict : dict, collection : str, point_interval 
             for split, segment_id, timestamp in tqdm(data_list, desc=f'collecting {collection}', ncols=80)
     }
 
-    # subsample points of lane centerlines
     for identifier, frame in meta.items():
+        for k, v in meta[identifier]['pose'].items():
+            meta[identifier]['pose'][k] = np.array(v, dtype=np.float64)
+        for camera in meta[identifier]['sensor'].keys():
+            for para in ['intrinsic', 'extrinsic']:
+                for k, v in meta[identifier]['sensor'][camera][para].items():
+                    meta[identifier]['sensor'][camera][para][k] = np.array(v, dtype=np.float64)
+
         if 'annotation' not in frame:
             continue
         for i, lane_centerline in enumerate(frame['annotation']['lane_centerline']):
@@ -63,12 +69,5 @@ def collect(root_path : str, data_dict : dict, collection : str, point_interval 
             meta[identifier]['annotation']['traffic_element'][i]['points'] = np.array(traffic_element['points'], dtype=np.float32)
         meta[identifier]['annotation']['topology_lclc'] = np.array(meta[identifier]['annotation']['topology_lclc'], dtype=np.int8)
         meta[identifier]['annotation']['topology_lcte'] = np.array(meta[identifier]['annotation']['topology_lcte'], dtype=np.int8)
-
-        for k, v in meta[identifier]['pose'].items():
-            meta[identifier]['pose'][k] = np.array(v, dtype=np.float64)
-        for camera in meta[identifier]['sensor'].keys():
-            for para in ['intrinsic', 'extrinsic']:
-                for k, v in meta[identifier]['sensor'][camera][para].items():
-                    meta[identifier]['sensor'][camera][para][k] = np.array(v, dtype=np.float64)
 
     io.pickle_dump(f'{root_path}/{collection}.pkl', meta)

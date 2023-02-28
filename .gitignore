@@ -134,13 +134,12 @@ dmypy.json
 .DS_Store
 .python_history
 
-data/Argoverse2
 data/OpenLane-V2/*
+!data/OpenLane-V2/data_dict_sample.json
 !data/OpenLane-V2/data_dict_example.json
-!data/OpenLane-V2/data_dict_subset_0.json
-!data/OpenLane-V2/data_dict_subset_1.json
 !data/OpenLane-V2/openlanev2.md5
 !data/OpenLane-V2/preprocess.py
+!data/OpenLane-V2/data_dict_subset_A.json
 
 RoadData/vis
 RoadData/gt_results.json
