@@ -162,27 +162,32 @@ OpenLane-Huawei 数据集是自动驾驶领域用于道路结构感知和推理�
 
 1. 运行以下命令安装必要的工具包，完成研究环境准备：
 
-```sh
-git clone https://github.com/OpenDriveLab/OpenLane-V2.git
-cd OpenLane-V2
-conda create -n openlanev2 python=3.8 -y
-conda activate openlanev2
-pip install -r requirements.txt
-python setup.py develop
-```
+    ```sh
+    git clone https://github.com/OpenDriveLab/OpenLane-V2.git
+    cd OpenLane-V2
+    conda create -n openlanev2 python=3.8 -y
+    conda activate openlanev2
+    pip install -r requirements.txt
+    python setup.py develop
+    ```
 
-2. 点击[链接](./data/README.md#download)从 [OpenDataLab](https://opendatalab.com/OpenLane-V2/download), Google Drive<img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/>，或者百度云<img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/>。
-并将它们移动至 `data/OpenLane-V2/` 文件夹下解压。
-生成的目录结构应[如下](./data/README.md#hierarchy)所示。
-或者用这些命令来下载数据集样本:
+2. 点击[链接](./data/README.md#download)从合适的渠道下载数据：
 
-```sh
-cd data/OpenLane-V2
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6" -O OpenLane-V2_sample.tar
-md5sum -c openlanev2.md5
-tar -xvf *.tar
-cd ../..
-```
+    - <img src="https://user-images.githubusercontent.com/29263416/222076048-21501bac-71df-40fa-8671-2b5f8013d2cd.png" alt="OpenDataLab" width="18"/> OpenDataLab，
+    - <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> Google Drive，
+    - <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="百度云" width="18"/> 百度云。
+
+    并将它们移动至 `data/OpenLane-V2/` 文件夹下解压。
+    生成的目录结构应[如下](./data/README.md#hierarchy)所示。
+    或者用这些命令来下载数据集样本:
+
+    ```sh
+    cd data/OpenLane-V2
+    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6" -O OpenLane-V2_sample.tar
+    md5sum -c openlanev2.md5
+    tar -xvf *.tar
+    cd ../..
+    ```
 
 3. 在 jupyter notebook 上运行 [tutorial](./tutorial.ipynb) 来熟悉数据集与对应的开发工具。
 
