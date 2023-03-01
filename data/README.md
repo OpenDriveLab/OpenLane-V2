@@ -2,7 +2,8 @@
 
 ## Download
 
-The files mentioned below can also be download via [OpenDataLab](https://opendatalab.com/OpenLane-V2/download).
+The files mentioned below can also be downloaded via [OpenDataLab](https://opendatalab.com/OpenLane-V2/download).
+It is recommended to use provided [command line interface](https://opendatalab.com/OpenLane-V2/cli) for acceleration.
 
 | Subset | Split | Google Drive <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> | Baidu Yun <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/> | md5 | Size |
 | --- | --- | --- | --- | --- | --- |
