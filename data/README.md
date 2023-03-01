@@ -122,7 +122,7 @@ For a single frame, annotations are formatted as follow:
                                                 9:  'u_turn',
                                                 10: 'no_u_turn',
                                                 11: 'slight_left',
-                                                12: 'slight_right,
+                                                12: 'slight_right',
             'points':                       <float> [2, 2] -- top-left and bottom-right corners of the 2D bounding box
             'confidence':                   <float> -- confidence, only for prediction
         },
