@@ -34,33 +34,33 @@
 - [Devkit](#devkit)
 - [Get Started](#get-started)
 - [Train a Model](#train-a-model)
-- [Benchmark and Leaderboard](#benchmark-and-leaderboard-to-be-released)
+- [Benchmark and Leaderboard](#benchmark-and-leaderboard)
 - [Citation](#citation)
 - [License](#license)
 
 ## Highlight - why we are exclusive?
 
-### $\color{Magenta}\fcolorbox{white}{white}{The world is three-dimensional - Introducing 3D lane}$ 
+### The world is three-dimensional - Introducing 3D lane
 Previous datasets annotate lanes on images in the perspective view. Such a type of 2D annotation is insufficient to fulfill real-world requirements.
-Following the [OpenLane](https://github.com/OpenDriveLab/OpenLane) dataset, we annotate $\color{blue}\fcolorbox{white}{white}{lanes in 3D space}$ to reflect their properties in the real world.
+Following the [OpenLane](https://github.com/OpenDriveLab/OpenLane) dataset, we annotate **lanes in 3D space** to reflect their properties in the real world.
 
-### $\color{Magenta}\fcolorbox{white}{white}{Be aware of traffic signals - Recognizing Extremely Small road elements}$ 
+### Be aware of traffic signals - Recognizing Extremely Small road elements
 Not only preventing collision but also facilitating efficiency is essential. 
 Vehicles follow predefined traffic rules for self-disciplining and cooperating with others to ensure a safe and efficient traffic system.
-$\color{blue}\fcolorbox{white}{white}{Traffic elements}$ on the roads, such as traffic lights and road signs, provide practical and real-time information.
+**Traffic elements** on the roads, such as traffic lights and road signs, provide practical and real-time information.
 
-### $\color{Magenta}\fcolorbox{white}{white}{Beyond perception - Topology Reasoning between lane and road elements}$ 
+### Beyond perception - Topology Reasoning between lane and road elements 
 A traffic element is only valid for its corresponding lanes. 
 Following the wrong signals would be catastrophic. 
 Also, lanes have their predecessors and successors to build the map. 
-Autonomous vehicles are required to $\color{blue}\fcolorbox{white}{white}{reason}$ about the $\color{blue}\fcolorbox{white}{white}{topology relationships}$ to drive in the right way.
-In this dataset, we hope to shed light on the task of $\color{blue}\fcolorbox{white}{white}{scene structure perception and reasoning}$.
+Autonomous vehicles are required to **reason** about the **topology relationships** to drive in the right way.
+In this dataset, we hope to shed light on the task of **scene structure perception and reasoning**.
 
-### $\color{Magenta}\fcolorbox{white}{white}{Data scale and diversity matters - building on Top of Awesome Benchmarks}$
+### Data scale and diversity matters - building on Top of Awesome Benchmarks
 Experience from the sunny day does not apply to the dancing snowflakes.
 For machine learning, data is the must-have food.
 We provide annotations on data collected in various cities, from Austin to Singapore and from Boston to Miami.
-The $\color{blue}\fcolorbox{white}{white}{diversity}$ of data enables models to generalize in different atmospheres and landscapes.
+The **diversity** of data enables models to generalize in different atmospheres and landscapes.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
