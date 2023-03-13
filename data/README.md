@@ -8,7 +8,7 @@ It is recommended to use provided [command line interface](https://opendatalab.c
 | Subset | Split | Google Drive <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> | Baidu Yun <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/> | md5 | Size |
 | --- | --- | --- | --- | --- | --- |
 | subset_A | sample |[sample](https://drive.google.com/file/d/1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6/view?usp=share_link) | [sample](https://pan.baidu.com/s/1ncqwDtuihKTBZROL5vdCAQ?pwd=psev) | 21c607fa5a1930275b7f1409b25042a0 | ~300M |
-| subset_A | all | [info](https://drive.google.com/file/d/1x4gaRpheBsCQShFtkW0y6gK4Bgm1oJn-/view?usp=share_link) | [info](https://pan.baidu.com/s/1a0BYgm_ovx4N31GDPjOuWQ?pwd=o1dh) |d7b3553e8f06b7d4febb9e1ac133ec94 | ~8.8G |
+| subset_A | all | [info](https://drive.google.com/file/d/1t47lNF4H3WhSsAqgsl9lSLIeO0p6n8p4/view?usp=share_link) | [info](https://pan.baidu.com/s/1uXpX4hqlMJLm0W6l12dJ-A?pwd=6rzj) |95bf28ccf22583d20434d75800be065d | ~8.8G |
 |  | train | [image_0](https://drive.google.com/file/d/1jio4Gj3dNlXmSzebO6D7Uy5oz4EaTNTq/view?usp=share_link) | [image_0](https://pan.baidu.com/s/12aV4CoT8znEY12q4M8XFiw?pwd=m204) | 8ade7daeec1b64f8ab91a50c81d812f6 | ~14.0G |
 |  |  | [image_1](https://drive.google.com/file/d/1IgnvZ2UljL49AzNV6CGNGFLQo6tjNFJq/view?usp=share_link) | [image_1](https://pan.baidu.com/s/1SArnlA2_Om9o0xcGd6-EwA?pwd=khx8) | c78e776f79e2394d2d5d95b7b5985e0f | ~14.3G |
 |  |  | [image_2](https://drive.google.com/file/d/1ViEsK5hukjMGfOm_HrCiQPkGArWrT91o/view?usp=share_link) | [image_2](https://pan.baidu.com/s/1ZghG7gwJqFrGxCEcUffp8A?pwd=0xgm) | 4bf09079144aa54cb4dcd5ff6e00cf79 | ~14.2G |
