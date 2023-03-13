@@ -40,7 +40,7 @@ def check_results(results : dict) -> None:
     if not isinstance(results, dict):
         raise Exception(f'Type of result should be dict')
 
-    for key in ['method', 'authors', 'e-mail', 'institution / company', 'country / region']:
+    for key in ['method', 'e-mail', 'institution / company', 'country / region']:
         if key in results:
             if not isinstance(results[key], str):
                 raise Exception(f'Type of value in key [{key}] should be str')
@@ -49,6 +49,16 @@ def check_results(results : dict) -> None:
                     countries.get(results[key])
                 except Exception:
                     raise Exception(f'Please specify a valid [{key}] according to ISO3166')
+        else:
+            valid = False
+            print(f'\n*** Missing key [{key}] for a valid submission ***\n')
+
+    for key in ['authors']:
+        if key in results:
+            if not isinstance(results[key], list):
+                raise Exception(f'Type of value in key [{key}] should be list')
+            if len(results[key]) > 10:
+                raise Exception(f'The number of authors should not exceed 10')
         else:
             valid = False
             print(f'\n*** Missing key [{key}] for a valid submission ***\n')
