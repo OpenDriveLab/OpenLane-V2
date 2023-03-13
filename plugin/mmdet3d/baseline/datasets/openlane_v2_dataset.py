@@ -366,9 +366,10 @@ class OpenLaneV2SubsetADataset(Custom3DDataset):
 
         predictions = {
             'method': 'dummy',
-            'authors': 'dummy',
+            'authors': ['dummy'],
             'e-mail': 'dummy',
             'institution / company': 'dummy',
+            # 'country / region': None,
             'results': {},
         }
         for index, result in enumerate(results):
