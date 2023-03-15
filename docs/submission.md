@@ -6,11 +6,11 @@ The submitted results are required to be stored in a pickle file, which is a dic
 ```
 {
     'method':                               <str> -- name of the method
-    'authors':                              <str> -- list of authors
-    'affiliation':                          <str> -- optional, affiliation
-    'description':                          <str> -- optional, description of the method
-    'url':                                  <str> -- optional, link to paper or repository
-    'predictions': {
+    'authors':                              <list> -- list of str, authors
+    'e-mail':                               <str> -- e-mail address
+    'institution / company':                <str> -- institution or company
+    'country / region':                     <str> -- country or region, checked by iso3166
+    'results': {
         [identifier]: {                     <tuple> -- identifier of the frame, (split, segment_id, timestamp)
             'lane_centerline':              ...
             'traffic_element':              ...
@@ -22,5 +22,8 @@ The submitted results are required to be stored in a pickle file, which is a dic
 }
 ```
 
-## Instruction
-The submission instruction is coming soon.
+## Steps
+1. Create a team on [EvalAI](https://eval.ai/web/challenges/challenge-page/1925).
+2. Click the 'Participate' tag, then choose a team for participation.
+3. Choose the phase 'Test Phase (CVPR 2023 Autonomous Driving Challenge)' and upload the file formatted as mentioned above.
+4. Check if the submitted file is valid, which is indicated by the 'Status' under the tag of 'My Submissions'. A valid submission would provide performance scores.
