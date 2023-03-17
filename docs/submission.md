@@ -9,7 +9,7 @@ The submitted results are required to be stored in a pickle file, which is a dic
     'authors':                              <list> -- list of str, authors
     'e-mail':                               <str> -- e-mail address
     'institution / company':                <str> -- institution or company
-    'country / region':                     <str> -- country or region, checked by iso3166
+    'country / region':                     <str> -- country or region, checked by iso3166*
     'results': {
         [identifier]: {                     <tuple> -- identifier of the frame, (split, segment_id, timestamp)
             'lane_centerline':              ...
@@ -21,6 +21,7 @@ The submitted results are required to be stored in a pickle file, which is a dic
     }
 }
 ```
+*: For validation, `from iso3166 import countries; countries.get(str)` can be used.
 
 ## Steps
 1. Create a team on [EvalAI](https://eval.ai/web/challenges/challenge-page/1925).
