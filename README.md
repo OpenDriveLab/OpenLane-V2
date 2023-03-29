@@ -111,7 +111,7 @@ Adapted from the task of link prediction, $\text{TOP}$ is used for topology amon
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## News
-- [2023/02]
+- [2023/03]
   *  We are holding a challenge on [CVPR 2023 Workshops](https://opendrivelab.com/AD23Challenge.html) :star:.
 - [2023/02]
   * Dataset `v1.0`: Data of `subset_A` released.
