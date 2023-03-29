@@ -1,6 +1,6 @@
 <div id="top" align="center">
 
-# OpenLane-V2 *
+# OpenLane-V2
 **The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving.**
 
 <a href="#data">
@@ -15,13 +15,16 @@
 
 **English | [中文](./README-zh-hans.md)**
 
+_In terms of ambiguity, the English version shall prevail._
+
 
 <img src="./imgs/poster.gif" width="696px">
 
 </div>
 
 <br>
-*: The dataset, OpenLane-V2 at Shanghai AI Lab, is named as RoadGenome at Huawei and publically as OpenLane-Huawei.
+
+> The dataset name OpenLane-V2, is named as **RoadGenome** at Huawei.
 
 ## Table of Contents
 - [Highlight](#highlight---why-we-are-exclusive)
@@ -37,6 +40,14 @@
 - [Benchmark and Leaderboard](#benchmark-and-leaderboard)
 - [Citation](#citation)
 - [License](#license)
+
+## News
+- [2023/02]
+  * Dataset `v1.0`: Data of `subset_A` released.
+  * Baseline model released.
+- [2023/01]
+  * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
+  * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
 
 ## Highlight - why we are exclusive?
 
@@ -110,15 +121,6 @@ Adapted from the task of link prediction, $\text{TOP}$ is used for topology amon
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## News
-- [2023/02]
-  * Dataset `v1.0`: Data of `subset_A` released.
-  * Baseline model released.
-- [2023/01]
-  * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
-  * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Data
 The OpenLane-V2 dataset is a large-scale dataset for scene structure perception and reasoning in the field of autonomous driving. 
@@ -226,6 +228,15 @@ Please stay tuned for the release of the benchmark.
 Please use the following citation when referencing OpenLane-V2:
 
 ```bibtex
+
+@article{ li2023_toponet,
+  author = {Tianyu Li, Li Chen, XXXX},
+  title = {TopoNet XXX},
+  journal = {arXiv preprint arXiv:2023.11027},
+  year = {2023}
+}
+
+
 @misc{ openlanev2_dataset,
   author = {{OpenLane-V2 Dataset Contributors}},
   title = {{OpenLane-V2: The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving}},
@@ -235,28 +246,12 @@ Please use the following citation when referencing OpenLane-V2:
 }
 ```
 
-Our dataset is built on top of the [nuScenes](https://www.nuscenes.org/nuscenes) and [Argoverse 2](https://www.argoverse.org/av2.html) datasets. Please also cite:
-
-```bibtex
-@article{ nuscenes2019,
-  author = {Holger Caesar and Varun Bankiti and Alex H. Lang and Sourabh Vora and Venice Erin Liong and Qiang Xu and Anush Krishnan and Yu Pan and Giancarlo Baldan and Oscar Beijbom},
-  title = {nuScenes: A multimodal dataset for autonomous driving},
-  journal = {arXiv preprint arXiv:1903.11027},
-  year = {2019}
-}
-
-@INPROCEEDINGS { Argoverse2,
-  author = {Benjamin Wilson and William Qi and Tanmay Agarwal and John Lambert and Jagjeet Singh and Siddhesh Khandelwal and Bowen Pan and Ratnesh Kumar and Andrew Hartnett and Jhony Kaesemodel Pontes and Deva Ramanan and Peter Carr and James Hays},
-  title = {Argoverse 2: Next Generation Datasets for Self-driving Perception and Forecasting},
-  booktitle = {Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks (NeurIPS Datasets and Benchmarks 2021)},
-  year = {2021}
-}
-```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## License
-Before using the OpenLane-V2 dataset, you should register on the website and agree to the terms of use of the [nuScenes](https://www.nuscenes.org/nuscenes) and [Argoverse 2](https://www.argoverse.org/av2.html) datasets.
+Our dataset is built on top of the [nuScenes](https://www.nuscenes.org/nuscenes) and [Argoverse 2](https://www.argoverse.org/av2.html) datasets.
+Before using the OpenLane-V2 dataset, you should agree to the terms of use of the [nuScenes](https://www.nuscenes.org/nuscenes) and [Argoverse 2](https://www.argoverse.org/av2.html) datasets respectively.
 All code within this repository is under [Apache License 2.0](./LICENSE).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
