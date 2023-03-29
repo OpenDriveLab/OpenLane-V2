@@ -24,7 +24,7 @@ _In terms of ambiguity, the English version shall prevail._
 
 <br>
 
-> The dataset name OpenLane-V2, is named as **RoadGenome** at Huawei.
+> The dataset name OpenLane-V2, is termed as **RoadGenome** at Huawei.
 
 ## Table of Contents
 - [Highlight](#highlight---why-we-are-exclusive)
