@@ -27,27 +27,39 @@ _In terms of ambiguity, the English version shall prevail._
 > The dataset name OpenLane-V2, is termed as **RoadGenome** at Huawei.
 
 ## Table of Contents
+- [News](#news)
+- [Benchmark and Leaderboard](#benchmark-and-leaderboard)
 - [Highlight](#highlight---why-we-are-exclusive)
 - [Task](#task)
   - [3D Lane Detection 🛣️](#3d-lane-detection-%EF%B8%8F)
   - [Traffic Element Recognition 🚥](#traffic-element-recognition-)
   - [Topology Recognition 🕸️](#topology-recognition-%EF%B8%8F)
-- [News](#news)
 - [Data](#data)
 - [Devkit](#devkit)
 - [Get Started](#get-started)
 - [Train a Model](#train-a-model)
-- [Benchmark and Leaderboard](#benchmark-and-leaderboard)
 - [Citation](#citation)
 - [License](#license)
 
 ## News
+- [2023/03]
+  *  We are holding a challenge on [CVPR 2023 Workshops](https://opendrivelab.com/AD23Challenge.html) :star:.
 - [2023/02]
   * Dataset `v1.0`: Data of `subset_A` released.
   * Baseline model released.
 - [2023/01]
   * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
   * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Benchmark and Leaderboard
+We will provide an initial benchmark on the OpenLane-V2 dataset, please stay tuned for the release.
+
+Currently, we are maintaining leaderboards on the *val* (coming soon) and [*test*](https://eval.ai/web/challenges/challenge-page/1925/leaderboard/4549) split of `subset_A`.
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Highlight - why we are exclusive?
 
@@ -118,18 +130,6 @@ Adapted from the task of link prediction, $\text{TOP}$ is used for topology amon
 <p align="center">
   <img src="./imgs/topology.gif" width="696px" >
 </p>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## News
-- [2023/03]
-  *  We are holding a challenge on [CVPR 2023 Workshops](https://opendrivelab.com/AD23Challenge.html) :star:.
-- [2023/02]
-  * Dataset `v1.0`: Data of `subset_A` released.
-  * Baseline model released.
-- [2023/01]
-  * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
-  * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -223,31 +223,10 @@ Options can be passed to enable supported functions during evaluation, such as `
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-## Benchmark and Leaderboard
-We will provide an initial benchmark on the OpenLane-V2 dataset, and you are welcome to add your work here!
-Please stay tuned for the release of the benchmark.
-
-| Method | OLS (main metric) (%) | $\text{DET}_{l}$ (%) | $\text{DET}_{t}$ (%) | $\text{TOP}_{ll}$ (%) | $\text{TOP}_{lt}$ (%) | $\text{F-Score}$* (%) |
-| - | - | - | - | - | - | - |
-| Baseline | 0.29 | 0.08 | 0.31 | 0.00 | 0.01 | 8.56 |
-
-<sub>* F-Score for lane detection is not taken into consideration in both the challenge and leaderboard.</sub>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Citation
 Please use the following citation when referencing OpenLane-V2:
 
 ```bibtex
-
-@article{ li2023_toponet,
-  author = {Tianyu Li, Li Chen, XXXX},
-  title = {TopoNet XXX},
-  journal = {arXiv preprint arXiv:2023.11027},
-  year = {2023}
-}
-
-
 @misc{ openlanev2_dataset,
   author = {{OpenLane-V2 Dataset Contributors}},
   title = {{OpenLane-V2: The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving}},
