@@ -121,6 +121,17 @@ Adapted from the task of link prediction, $\text{TOP}$ is used for topology amon
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## News
+- [2023/03]
+  *  We are holding a challenge on [CVPR 2023 Workshops](https://opendrivelab.com/AD23Challenge.html) :star:.
+- [2023/02]
+  * Dataset `v1.0`: Data of `subset_A` released.
+  * Baseline model released.
+- [2023/01]
+  * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
+  * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Data
 The OpenLane-V2 dataset is a large-scale dataset for scene structure perception and reasoning in the field of autonomous driving. 
