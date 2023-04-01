@@ -56,7 +56,7 @@ _In terms of ambiguity, the English version shall prevail._
 ## Benchmark and Leaderboard
 We will provide an initial benchmark on the OpenLane-V2 dataset, please stay tuned for the release.
 
-Currently, we are maintaining leaderboards on the *val* (coming soon) and [*test*](https://eval.ai/web/challenges/challenge-page/1925/leaderboard/4549) split of `subset_A`.
+Currently, we are maintaining leaderboards on the [*val*](https://paperswithcode.com/sota/3d-lane-detection-on-openlane-v2-2) and [*test*](https://eval.ai/web/challenges/challenge-page/1925/leaderboard/4549) split of `subset_A`.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
