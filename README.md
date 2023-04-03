@@ -43,7 +43,7 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## News
 - [2023/03]
-  *  We are holding a challenge on [CVPR 2023 Workshops](https://opendrivelab.com/AD23Challenge.html) :star:.
+  *  We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) :star:.
 - [2023/02]
   * Dataset `v1.0`: Data of `subset_A` released.
   * Baseline model released.
