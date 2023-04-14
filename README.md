@@ -24,7 +24,7 @@ _In terms of ambiguity, the English version shall prevail._
 
 <br>
 
-> The dataset name OpenLane-V2, is termed as **RoadGenome** at Huawei.
+> The dataset name OpenLane-V2, is termed as **Road Genome** at Huawei.
 
 ## Table of Contents
 - [News](#news)
@@ -42,6 +42,8 @@ _In terms of ambiguity, the English version shall prevail._
 - [License](#license)
 
 ## News
+- [2023/04]
+  * A stronger baseline released. Check out [here](https://github.com/OpenDriveLab/OpenLane-V2/blob/master/plugin/mmdet3d/configs/baseline_large.py).
 - [2023/03]
   *  We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) :star:.
 - [2023/02]
