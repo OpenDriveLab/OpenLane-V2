@@ -43,6 +43,9 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## News
 - [2023/04]
+  * We reiterated the rules of the **Challenge**:
+    - During inference, the input modality of the model should be camera only;
+    - No future frame is allowed during inference.
   * A stronger baseline released. Check out [here](https://github.com/OpenDriveLab/OpenLane-V2/blob/master/plugin/mmdet3d/configs/baseline_large.py).
 - [2023/03]
   *  We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) :star:.
