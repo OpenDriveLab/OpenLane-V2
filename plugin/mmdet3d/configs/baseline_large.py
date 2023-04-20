@@ -1,4 +1,4 @@
-custom_imports = dict(imports=['plugin.mmdet3d.baseline'])
+custom_imports = dict(imports=['projects.openlanev2.baseline'])
 
 # If point cloud range is changed, the models should also change their point
 # cloud range accordingly
@@ -40,7 +40,7 @@ bev_h_ = 100
 bev_w_ = 200
 
 model = dict(
-    type='ROAD_BEVFormer',
+    type='BaselineLarge',
     video_test_mode=False,
     img_backbone=dict(
         type='ResNet',
@@ -287,8 +287,8 @@ test_pipeline = [
 ]
 
 dataset_type = 'OpenLaneV2SubsetADataset'
-data_root = 'data/OpenLane-V2'
-meta_root = 'data/OpenLane-V2'
+data_root = 'OpenLane-V2/data/OpenLane-V2'
+meta_root = 'OpenLane-V2/data/OpenLane-V2'
 
 data = dict(
     samples_per_gpu=1,

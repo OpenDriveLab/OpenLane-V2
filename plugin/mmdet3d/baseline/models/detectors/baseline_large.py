@@ -17,7 +17,7 @@ from mmdet3d.models.detectors.mvx_two_stage import MVXTwoStageDetector
 
 
 @DETECTORS.register_module()
-class ROAD_BEVFormer(MVXTwoStageDetector):
+class BaselineLarge(MVXTwoStageDetector):
 
     def __init__(self,
                  pts_voxel_layer=None,
@@ -42,7 +42,7 @@ class ROAD_BEVFormer(MVXTwoStageDetector):
                  video_test_mode=False
                  ):
 
-        super(ROAD_BEVFormer,
+        super(BaselineLarge,
               self).__init__(pts_voxel_layer, pts_voxel_encoder,
                              pts_middle_encoder, pts_fusion_layer,
                              img_backbone, pts_backbone, img_neck, pts_neck,
@@ -196,7 +196,7 @@ class ROAD_BEVFormer(MVXTwoStageDetector):
                     dict(
                         batch_input_shape=batch_input_shape,
                         img_shape=img_meta['img_shape'][0],
-                        scale_factor=img_meta['scale_factor'][0]))
+                        scale_factor=img_meta['scale_factor']))
                 img_meta['batch_input_shape'] = batch_input_shape
 
             te_losses = {}
@@ -257,7 +257,7 @@ class ROAD_BEVFormer(MVXTwoStageDetector):
                     dict(
                         batch_input_shape=batch_input_shape,
                         img_shape=img_meta['img_shape'][0],
-                        scale_factor=img_meta['scale_factor'][0]))
+                        scale_factor=img_meta['scale_factor']))
                 img_meta['batch_input_shape'] = batch_input_shape
             bbox_outs = self.bbox_head(front_view_img_feats, bbox_img_metas)
             bbox_results = self.bbox_head.get_bboxes(bbox_outs, bbox_img_metas, rescale=rescale)
