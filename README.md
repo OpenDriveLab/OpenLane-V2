@@ -43,6 +43,7 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## News
 - [2023/04]
+  * [OpenLane-V2 paper](https://arxiv.org/abs/2304.10440) is available on arXiv.
   * We reiterated the rules of the **Challenge**:
     - During inference, the input modality of the model should be camera only;
     - No future frame is allowed during inference.
@@ -232,12 +233,11 @@ Options can be passed to enable supported functions during evaluation, such as `
 Please use the following citation when referencing OpenLane-V2:
 
 ```bibtex
-@misc{ openlanev2_dataset,
-  author = {{OpenLane-V2 Dataset Contributors}},
-  title = {{OpenLane-V2: The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving}},
-  url = {https://github.com/OpenDriveLab/OpenLane-V2},
-  license = {Apache-2.0},
-  year = {2023}
+@article{wang2023openlanev2,
+  title={Road Genome: A Topology Reasoning Benchmark for Scene Understanding in Autonomous Driving}, 
+  author={Wang, Huijie and Liu, Zhenbo and Li, Yang and Li, Tianyu and Chen, Li and Sima, Chonghao and Wang, Yuting and Jiang, Shengyin and Wen, Feng and Xu, Hang and Luo, Ping and Yan, Junchi and Zhang, Wei and Yao, Jun and Qiao, Yu and Li, Hongyang},
+  journal={arXiv preprint arXiv:2304.10440},
+  year={2023}
 }
 ```
 
