@@ -41,13 +41,14 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## News
 - [2023/04]
+  * A strong baseline based on [InternImage](https://github.com/OpenGVLab/InternImage) released. Check out [here](https://github.com/OpenGVLab/InternImage/tree/master/autonomous_driving/openlane-v2). 🚀
   * [OpenLane-V2 paper](https://arxiv.org/abs/2304.10440) is available on arXiv.
   * We reiterated the rules of the **Challenge**:
     - During inference, the input modality of the model should be camera only;
     - No future frame is allowed during inference.
   * A stronger baseline released. Check out [here](https://github.com/OpenDriveLab/OpenLane-V2/blob/master/plugin/mmdet3d/configs/baseline_large.py).
 - [2023/03]
-  *  We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) :star:.
+  *  We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html). :star:
 - [2023/02]
   * Dataset `v1.0`: Data of `subset_A` released.
   * Baseline model released.
