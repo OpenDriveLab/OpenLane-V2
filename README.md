@@ -24,8 +24,6 @@ _In terms of ambiguity, the English version shall prevail._
 
 <br>
 
-> The dataset name OpenLane-V2, is termed as **Road Genome** at Huawei.
-
 ## Table of Contents
 - [News](#news)
 - [Benchmark and Leaderboard](#benchmark-and-leaderboard)
