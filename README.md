@@ -222,7 +222,7 @@ Assuming OpenLane-V2 is installed under `OpenLane-V2/` and mmdet3d is built unde
         └── openlanev2 -> OpenLane-V2/plugin/mmdet3d
 ```
 Then you can train or evaluate a model using the config `mmdetection3d/projects/openlanev2/configs/baseline.py`, whose path is replaced accordingly.
-Options can be passed to enable supported functions during evaluation, such as `--eval-options dump=True dump_dir=/PATH/TO/DUMP` to save pickle file for submission and `--eval-options visualization=True visualization_dir=/PATH/TO/VIS` for visualization.
+Options can be passed to enable supported functions during evaluation (`--eval *`), such as `--eval-options dump=True dump_dir=/PATH/TO/DUMP` to save pickle file for submission and `--eval-options visualization=True visualization_dir=/PATH/TO/VIS` for visualization.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
