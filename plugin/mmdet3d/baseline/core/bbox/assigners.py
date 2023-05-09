@@ -30,6 +30,16 @@ from mmdet.core.bbox.assigners import HungarianAssigner, AssignResult
 @BBOX_ASSIGNERS.register_module()
 class LaneHungarianAssigner(HungarianAssigner):
 
+    def __init__(self,
+                 cls_cost=dict(type='ClassificationCost', weight=1.),
+                 reg_cost=dict(type='BBoxL1Cost', weight=1.0),
+                 iou_cost=dict(type='IoUCost', iou_mode='giou', weight=0.0),
+                 bev_range=None,
+                 normalize=False):
+        super().__init__(cls_cost, reg_cost, iou_cost)
+        self.bev_range = bev_range
+        self.normalize = normalize
+
     def assign(self,
                lane_pred,
                cls_pred,
@@ -61,7 +71,15 @@ class LaneHungarianAssigner(HungarianAssigner):
         # classification and lanecost.
         cls_cost = self.cls_cost(cls_pred, gt_labels)
         # regression L1 cost
-        reg_cost = self.reg_cost(lane_pred, gt_lanes)
+        if self.normalize:
+            gt_lanes_normalized = torch.zeros_like(gt_lanes)
+            gt_lanes_normalized[..., 0::3] = (gt_lanes[..., 0::3] - self.bev_range[0]) / (self.bev_range[3] - self.bev_range[0])
+            gt_lanes_normalized[..., 1::3] = (gt_lanes[..., 1::3] - self.bev_range[1]) / (self.bev_range[4] - self.bev_range[1])
+            gt_lanes_normalized[..., 2::3] = (gt_lanes[..., 2::3] - self.bev_range[2]) / (self.bev_range[5] - self.bev_range[2])
+        else:
+            gt_lanes_normalized = gt_lanes
+
+        reg_cost = self.reg_cost(lane_pred, gt_lanes_normalized)
         # weighted sum of above three costs
         cost = cls_cost + reg_cost
 

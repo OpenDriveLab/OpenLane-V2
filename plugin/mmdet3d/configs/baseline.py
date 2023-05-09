@@ -52,7 +52,9 @@ model = dict(
                 type='LaneHungarianAssigner',
                 cls_cost=dict(type='FocalLossCost', weight=1.0),
                 reg_cost=dict(type='LaneL1Cost', weight=2.5),
-                iou_cost=dict(type='IoUCost', weight=0.0))), # dummy
+                iou_cost=dict(type='IoUCost', weight=0.0),
+                bev_range=[-50.0, -25.0, -3.0, 50.0, 25.0, 2.0],
+                normalize=True)), # dummy
         bev_range=[-50.0, -25.0, -3.0, 50.0, 25.0, 2.0]),
     te_head=dict(
         type='CustomDETRHead',
