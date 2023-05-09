@@ -97,9 +97,12 @@ The primary task of the dataset is **scene structure perception and reasoning**,
 The challenge of this dataset includes not only detecting lane centerlines and traffic elements but also recognizing the attribute of traffic elements and topology relationships on detected objects.
 We define the **[OpenLane-V2 Score (OLS)](./docs/metrics.md#openlane-v2-score)**, which is the average of various metrics covering different aspects of the primary task:
 
-$$
+<!-- $$
 \text{OLS} = \frac{1}{4} \bigg[ \text{DET}_{l} + \text{DET}_{t} + f(\text{TOP}_{ll}) + f(\text{TOP}_{lt}) \bigg].
-$$
+$$ -->
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/29263416/236969929-aa4c729f-9101-4fe8-9d32-51578f6a2001.png" width="500px" >
+</p>
 
 The metrics of different subtasks are described below.
 
@@ -178,8 +181,8 @@ Please follow the steps below to get familiar with the OpenLane-V2 dataset.
 2. Use [links](./data/README.md#download) to download data manually from 
 
     - <img src="https://user-images.githubusercontent.com/29263416/222076048-21501bac-71df-40fa-8671-2b5f8013d2cd.png" alt="OpenDataLab" width="18"/> OpenDataLab,
-    - <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> Google Drive,
-    - <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/> Baidu Yun.
+    - <img src="https://user-images.githubusercontent.com/29263416/236970575-125919cc-1a36-4968-95e7-f5a17f896f9f.png" alt="Google Drive" width="18"/> Google Drive,
+    - <img src="https://user-images.githubusercontent.com/29263416/236970717-fe619dd6-7e36-446b-88bf-30ff91028d87.png" alt="Baidu Yun" width="18"/> Baidu Yun.
 
     Then put them into the `data/OpenLane-V2/` folder and unzip them. 
     The resulting folder hierarchy is described [here](./data/README.md#hierarchy).
