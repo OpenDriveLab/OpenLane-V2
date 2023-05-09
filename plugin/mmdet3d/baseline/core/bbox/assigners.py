@@ -74,8 +74,8 @@ class LaneHungarianAssigner(HungarianAssigner):
         if self.normalize:
             gt_lanes_normalized = torch.zeros_like(gt_lanes)
             gt_lanes_normalized[..., 0::3] = (gt_lanes[..., 0::3] - self.bev_range[0]) / (self.bev_range[3] - self.bev_range[0])
-            gt_lanes_normalized[..., 1::3] = (gt_lanes[..., 1::3] - self.bev_range[0]) / (self.bev_range[3] - self.bev_range[0])
-            gt_lanes_normalized[..., 2::3] = (gt_lanes[..., 2::3] - self.bev_range[0]) / (self.bev_range[3] - self.bev_range[0])
+            gt_lanes_normalized[..., 1::3] = (gt_lanes[..., 1::3] - self.bev_range[1]) / (self.bev_range[4] - self.bev_range[1])
+            gt_lanes_normalized[..., 2::3] = (gt_lanes[..., 2::3] - self.bev_range[2]) / (self.bev_range[5] - self.bev_range[2])
         else:
             gt_lanes_normalized = gt_lanes
 
