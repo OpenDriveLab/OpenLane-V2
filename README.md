@@ -40,6 +40,8 @@ _In terms of ambiguity, the English version shall prevail._
 - [License](#license)
 
 ## News
+- [2023/05]
+  * Note that it is a must to append a correct **email** address and other information to validate your submissions in the [Challenge](https://opendrivelab.com/AD23Challenge.html#rules).❗
 - [2023/04]
   * A strong baseline based on [InternImage](https://github.com/OpenGVLab/InternImage) released. Check out [here](https://github.com/OpenGVLab/InternImage/tree/master/autonomous_driving/openlane-v2). 🚀
   * [OpenLane-V2 paper](https://arxiv.org/abs/2304.10440) is available on arXiv.
