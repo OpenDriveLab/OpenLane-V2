@@ -383,8 +383,7 @@ class OpenLaneV2SubsetADataset(Custom3DDataset):
             # lc
 
             pred_lc = result['pred_lc']
-            sorted_index = np.argsort(pred_lc[1][:, 0])[:100]
-            lanes, confidences = pred_lc[0][sorted_index], pred_lc[1][:, 0][sorted_index]
+            lanes, confidences = pred_lc[0], pred_lc[1][:, 0]
 
             lanes = lanes.reshape(-1, lanes.shape[-1] // 3, 3)
 
