@@ -40,7 +40,10 @@ _In terms of ambiguity, the English version shall prevail._
 - [License](#license)
 
 ## News
-- We just spotted  an [issue](https://github.com/OpenDriveLab/OpenLane-V2/issues/46), which would potentially influence the **scores** on both *val* and *test* splits, in the provided **dataloader** for **formatting results**, please fix the code accordingly. ❗❗❗
+- Due to the issue https://github.com/OpenDriveLab/OpenLane-V2/issues/48, we have postponed the deadline to June 01. Submission limits are also relaxed accordingly.
+This issue leads to a potential change in the **EVALUATION SCORE**. Please update the evaluation code accordingly on your local machine. For all "finished" submissions, we will re-run the evaluation process gradually. The re-runed and newly submitted submissions will be marked as "verified".
+Please make sure to make your correct submission public on the leaderboard.❗❗❗
+- We just spotted an [issue](https://github.com/OpenDriveLab/OpenLane-V2/issues/46), which would potentially influence the **scores** on both *val* and *test* splits, in the provided **dataloader** for **formatting results**, please fix the code accordingly. ❗❗❗
 - [2023/05]
   * Note that it is a must to append a correct **email** address and other information to validate your submissions in the [Challenge](https://opendrivelab.com/AD23Challenge.html#rules).❗
 - [2023/04]
