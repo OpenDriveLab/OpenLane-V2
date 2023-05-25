@@ -167,7 +167,7 @@ def _inject(num_gt, pred, tp, idx_match_gt, confidence, distance_threshold, obje
     eps = np.finfo(np.float32).eps
     recalls = tps / np.maximum(num_gt, eps)
 
-    taken = np.percentile(recalls, np.arange(10, 101, 10))
+    taken = np.percentile(recalls, np.arange(10, 101, 10), method='closest_observation')
     taken_idx = {r: i for i, r in enumerate(recalls)}
     confidence_thresholds = sorted_confidence[np.asarray([taken_idx[t] for t in taken])]
 
