@@ -242,8 +242,8 @@ Please use the following citation when referencing OpenLane-V2:
 
 ```bibtex
 @article{wang2023openlanev2,
-  title={Road Genome: A Topology Reasoning Benchmark for Scene Understanding in Autonomous Driving}, 
-  author={Wang, Huijie and Liu, Zhenbo and Li, Yang and Li, Tianyu and Chen, Li and Sima, Chonghao and Wang, Yuting and Jiang, Shengyin and Wen, Feng and Xu, Hang and Luo, Ping and Yan, Junchi and Zhang, Wei and Yao, Jun and Qiao, Yu and Li, Hongyang},
+  title={OpenLane-V2: A Topology Reasoning Benchmark for Scene Understanding in Autonomous Driving}, 
+  author={Wang, Huijie and Li, Tianyu and Li, Yang and Chen, Li and Sima, Chonghao and Liu, Zhenbo and Wang, Yuting and Jiang, Shengyin and Jia, Peijin and Wang, Bangjun and Wen, Feng and Xu, Hang and Luo, Ping and Yan, Junchi and Zhang, Wei and Li, Hongyang},
   journal={arXiv preprint arXiv:2304.10440},
   year={2023}
 }
