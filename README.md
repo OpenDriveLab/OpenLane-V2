@@ -26,7 +26,7 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## Table of Contents
 - [News](#news)
-- [Benchmark and Leaderboard](#benchmark-and-leaderboard)
+- [Leaderboard](#leaderboard)
 - [Highlight](#highlight---why-we-are-exclusive)
 - [Task](#task)
   - [3D Lane Detection 🛣️](#3d-lane-detection-%EF%B8%8F)
@@ -40,21 +40,14 @@ _In terms of ambiguity, the English version shall prevail._
 - [License](#license)
 
 ## News
-- Due to the issue https://github.com/OpenDriveLab/OpenLane-V2/issues/48, we have postponed the deadline to June 01. Submission limits are also relaxed accordingly.
-This issue leads to a potential change in the **EVALUATION SCORE**. Please update the evaluation code accordingly on your local machine. For all "finished" submissions, we will re-run the evaluation process gradually. The re-runed and newly submitted submissions will be marked as "verified".
-Please make sure to make your correct submission public on the leaderboard.❗❗❗
-- We just spotted an [issue](https://github.com/OpenDriveLab/OpenLane-V2/issues/46), which would potentially influence the **scores** on both *val* and *test* splits, in the provided **dataloader** for **formatting results**, please fix the code accordingly. ❗❗❗
-- [2023/05]
-  * Note that it is a must to append a correct **email** address and other information to validate your submissions in the [Challenge](https://opendrivelab.com/AD23Challenge.html#rules).❗
+- [2023/06]
+  * The Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up. The test server will be re-opened soon. Please stay tuned!
 - [2023/04]
-  * A strong baseline based on [InternImage](https://github.com/OpenGVLab/InternImage) released. Check out [here](https://github.com/OpenGVLab/InternImage/tree/master/autonomous_driving/openlane-v2). 🚀
+  * A strong baseline based on [InternImage](https://github.com/OpenGVLab/InternImage) released. Check out [here](https://github.com/OpenGVLab/InternImage/tree/master/autonomous_driving/openlane-v2).
   * [OpenLane-V2 paper](https://arxiv.org/abs/2304.10440) is available on arXiv.
-  * We reiterated the rules of the **Challenge**:
-    - During inference, the input modality of the model should be camera only;
-    - No future frame is allowed during inference.
   * A stronger baseline released. Check out [here](https://github.com/OpenDriveLab/OpenLane-V2/blob/master/plugin/mmdet3d/configs/baseline_large.py).
-- [2023/03]
-  *  We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html). :star:
+- ~~[2023/03]~~
+  *  ~~We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html).~~
 - [2023/02]
   * Dataset `v1.0`: Data of `subset_A` released.
   * Baseline model released.
@@ -64,10 +57,8 @@ Please make sure to make your correct submission public on the leaderboard.❗�
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Benchmark and Leaderboard
-We will provide an initial benchmark on the OpenLane-V2 dataset, please stay tuned for the release.
-
-Currently, we are maintaining leaderboards on the [*val*](https://paperswithcode.com/sota/3d-lane-detection-on-openlane-v2-2) and [*test*](https://eval.ai/web/challenges/challenge-page/1925/leaderboard/4549) split of `subset_A`.
+## Leaderboard
+Please refer to the final leaderboard of the [Challenge](https://opendrivelab.com/AD23Challenge.html#openlane_topology).
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
