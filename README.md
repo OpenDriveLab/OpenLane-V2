@@ -59,6 +59,7 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## Leaderboard
 Please refer to the final leaderboard of the [Challenge](https://opendrivelab.com/AD23Challenge.html#openlane_topology).
+![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
