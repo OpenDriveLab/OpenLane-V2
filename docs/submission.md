@@ -23,10 +23,9 @@ The submitted results are required to be stored in a pickle file, which is a dic
     }
 }
 ```
-*: For validation, `from iso3166 import countries; countries.get(str)` can be used.
 
 ## Steps
 1. Create a team on [EvalAI](https://eval.ai/web/challenges/challenge-page/1925).
 2. Click the 'Participate' tag, then choose a team for participation.
-3. Choose the phase 'Test Phase (CVPR 2023 Autonomous Driving Challenge)' and upload the file formatted as mentioned above.
+3. Choose the phase 'Test Phase' and upload the file formatted as mentioned above.
 4. Check if the submitted file is valid, which is indicated by the 'Status' under the tag of 'My Submissions'. A valid submission would provide performance scores.
