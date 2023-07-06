@@ -40,8 +40,10 @@ _In terms of ambiguity, the English version shall prevail._
 - [License](#license)
 
 ## News
+- [2023/07]
+  * The test server is re-opened.
 - [2023/06]
-  * The Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up. The test server will be re-opened soon. Please stay tuned!
+  * The Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up. ~~The test server will be re-opened soon. Please stay tuned!~~
 - [2023/04]
   * A strong baseline based on [InternImage](https://github.com/OpenGVLab/InternImage) released. Check out [here](https://github.com/OpenGVLab/InternImage/tree/master/autonomous_driving/openlane-v2).
   * [OpenLane-V2 paper](https://arxiv.org/abs/2304.10440) is available on arXiv.
@@ -58,7 +60,8 @@ _In terms of ambiguity, the English version shall prevail._
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Leaderboard
-Please refer to the final leaderboard of the [Challenge](https://opendrivelab.com/AD23Challenge.html#openlane_topology).
+We maintain a [leaderboard](https://opendrivelab.com/AD23Challenge.html#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instruction [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
+### AD Challenge at CVPR 2023
 ![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
 
