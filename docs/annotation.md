@@ -1,6 +1,4 @@
-# Annotation
-
-## Criterion
+# Annotation Criterion
 
 The road structure cognition task is defined as inputting the surrounding view images, reconstructing the high-precision map of the self-vehicle, and outputting the recognition result of the direction of the self-vehicle. 
 The specific expansion is to input the surrounding view images of the vehicle, HDMap; the output is the lane centerlines, the traffic signs, the topology of the lane centerlines, and the correspondence between lanes centerlines and traffic signs. 
