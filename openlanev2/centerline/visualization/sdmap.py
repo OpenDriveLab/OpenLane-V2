@@ -1,11 +1,11 @@
 # ==============================================================================
 # Binaries and/or source for the following packages or projects 
 # are presented under one or more of the following open source licenses:
-# setup.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
+# pv.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
 #
 # Contact wanghuijie@pjlab.org.cn if you have any issue.
 #
-# Copyright (c) 2023 The OpenLane-v2 Dataset Authors. All Rights Reserved.
+# Copyright (c) 2023 The OpenLane-V2 Dataset Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,16 +20,25 @@
 # limitations under the License.
 # ==============================================================================
 
-from setuptools import setup, find_packages
+import cv2
+import numpy as np
+
+from .utils import THICKNESS, COLOR_DEFAULT
+from .bev import BEV_SCALE, BEV_RANGE
+from ...utils import SD_MAP_RANGE
+
+assert BEV_RANGE[0] == SD_MAP_RANGE[0] and BEV_RANGE[1] == SD_MAP_RANGE[2] \
+    and BEV_RANGE[2] == SD_MAP_RANGE[1] and BEV_RANGE[3] == SD_MAP_RANGE[3]
 
 
-setup(
-    name='openlanev2',
-    version='0.2.0',
-    author='The OpenLane-V2 Dataset Authors',
-    author_email='wanghuijie@pjlab.org.cn',
-    description='The official devkit of the OpenLane-V2 dataset.',
-    url='https://github.com/OpenDriveLab/OpenLane-V2',
-    packages=find_packages(),
-    license='Apache License 2.0',
-)
+def draw_sd_map(sd_map):
+    image = np.ones((
+        BEV_SCALE * (BEV_RANGE[1] - BEV_RANGE[0]),
+        BEV_SCALE * (BEV_RANGE[3] - BEV_RANGE[2]),
+        3,
+    ), dtype=np.int32) * 191
+    if sd_map is not None:
+        for road in sd_map:
+            road = (BEV_SCALE * (-road[:, :2] + np.array([BEV_RANGE[1] , BEV_RANGE[3]]))).astype(int)
+            cv2.polylines(image, [road[:, [1,0]]], False, COLOR_DEFAULT, THICKNESS * 10)
+    return image

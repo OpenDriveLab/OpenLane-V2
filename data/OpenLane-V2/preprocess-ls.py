@@ -21,7 +21,7 @@
 # =============================================================================='
 
 from openlanev2.centerline.io import io
-from openlanev2.centerline.preprocessing import collect
+from openlanev2.lanesegment.preprocessing import collect
 
 
 root_path = './OpenLane-V2'
@@ -30,4 +30,4 @@ for file in io.os_listdir(root_path):
         subset = file.split('.')[0]
         for split, segments in io.json_load(f'{root_path}/{file}').items():
             point_interval = 1 if split == 'train' else 20
-            collect(root_path, {split: segments}, f'{subset}_{split}', point_interval=point_interval)
+            collect(root_path, {split: segments}, f'{subset}_{split}_ls', point_interval=point_interval)

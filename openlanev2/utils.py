@@ -5,7 +5,7 @@
 #
 # Contact wanghuijie@pjlab.org.cn if you have any issue.
 #
-# Copyright (c) 2023 The OpenLane-v2 Dataset Authors. All Rights Reserved.
+# Copyright (c) 2023 The OpenLane-V2 Dataset Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,6 +35,19 @@ TRAFFIC_ELEMENT_ATTRIBUTE = {
     'slight_left':      11,
     'slight_right':     12,
 }
+
+LANELINE_CATEGORY = {
+    'none':             0,
+    'solid':            1,
+    'dash':             2,
+}
+
+AREA_CATEGOTY = {
+    'pedestrian_crossing':  1,
+    'road_boundary':        2,
+}
+
+SD_MAP_RANGE = [-50, -25, 50, 25] 
 
 
 def format_metric(metric):

@@ -30,4 +30,4 @@ for file in io.os_listdir(root_path):
         subset = file.split('.')[0]
         for split, segments in io.json_load(f'{root_path}/{file}').items():
             point_interval = 1 if split == 'train' else 20
-            collect(root_path, {split: segments}, f'{subset}_{split}', point_interval=point_interval)
+            collect(root_path, {split: segments}, f'{subset}_{split}_sd', point_interval=point_interval， with_sd_map=True)

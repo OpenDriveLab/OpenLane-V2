@@ -7,8 +7,10 @@ It is recommended to use provided [command line interface](https://opendatalab.c
 
 | Subset | Split | Google Drive <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> | Baidu Yun <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/> | md5 | Size |
 | --- | --- | --- | --- | --- | --- |
-| subset_A | sample |[sample](https://drive.google.com/file/d/1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6/view?usp=share_link) | [sample](https://pan.baidu.com/s/1ncqwDtuihKTBZROL5vdCAQ?pwd=psev) | 21c607fa5a1930275b7f1409b25042a0 | ~300M |
-| subset_A | all | [info](https://drive.google.com/file/d/1t47lNF4H3WhSsAqgsl9lSLIeO0p6n8p4/view?usp=share_link) | [info](https://pan.baidu.com/s/1uXpX4hqlMJLm0W6l12dJ-A?pwd=6rzj) |95bf28ccf22583d20434d75800be065d | ~8.8G |
+| sample | OpenLane-V2 |[sample](https://drive.google.com/file/d/1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6/view?usp=share_link) | [sample](https://pan.baidu.com/s/1ncqwDtuihKTBZROL5vdCAQ?pwd=psev) | 21c607fa5a1930275b7f1409b25042a0 | ~300M |
+| subset_A | OpenLane-V2 | [info](https://drive.google.com/file/d/1t47lNF4H3WhSsAqgsl9lSLIeO0p6n8p4/view?usp=share_link) | [info](https://pan.baidu.com/s/1uXpX4hqlMJLm0W6l12dJ-A?pwd=6rzj) |95bf28ccf22583d20434d75800be065d | ~8.8G |
+|  | SD Map as Prior Expansion |  |  |  |
+|  | Unifying Map Elements Expansion |  |  |  |
 |  | train | [image_0](https://drive.google.com/file/d/1jio4Gj3dNlXmSzebO6D7Uy5oz4EaTNTq/view?usp=share_link) | [image_0](https://pan.baidu.com/s/12aV4CoT8znEY12q4M8XFiw?pwd=m204) | 8ade7daeec1b64f8ab91a50c81d812f6 | ~14.0G |
 |  |  | [image_1](https://drive.google.com/file/d/1IgnvZ2UljL49AzNV6CGNGFLQo6tjNFJq/view?usp=share_link) | [image_1](https://pan.baidu.com/s/1SArnlA2_Om9o0xcGd6-EwA?pwd=khx8) | c78e776f79e2394d2d5d95b7b5985e0f | ~14.3G |
 |  |  | [image_2](https://drive.google.com/file/d/1ViEsK5hukjMGfOm_HrCiQPkGArWrT91o/view?usp=share_link) | [image_2](https://pan.baidu.com/s/1ZghG7gwJqFrGxCEcUffp8A?pwd=0xgm) | 4bf09079144aa54cb4dcd5ff6e00cf79 | ~14.2G |
@@ -33,6 +35,8 @@ cd data
 python OpenLane-V2/preprocess.py 
 ```
 
+For using the SD Map as Prior and Unifying Map Elements Expansion, please run `python OpenLane-V2/preprocess-sd.py` and `python OpenLane-V2/preprocess-ls.py` respectively.
+
 ## Hierarchy
 The hierarchy of folder `OpenLane-V2/` is described below:
 ```
@@ -44,8 +48,10 @@ The hierarchy of folder `OpenLane-V2/` is described below:
     |   |   |   |   ├── [timestamp].jpg
     |   |   |   |   └── ...
     |   |   |   └── ...
+    |   |   ├── sdmap.json
     |   |   └── info
     |   |       ├── [timestamp].json
+    |   |       ├── [timestamp]-ls.json
     |   |       └── ...
     |   └── ...
     ├── val
@@ -56,7 +62,9 @@ The hierarchy of folder `OpenLane-V2/` is described below:
     ├── data_dict_subset_A.json
     ├── data_dict_subset_B.json
     ├── openlanev2.md5
-    └── preprocess.py
+    ├── preprocess.py
+    ├── preprocess-sd.py
+    └── preprocess-ls.py
 
 ```
 
@@ -139,5 +147,68 @@ For predictions, it can be randomly assigned but unique in a single frame.
 It is a MUST to keep the ordering the same for correct evaluation. 
 For ground truth, only 0 or 1 is a valid boolean value for an element in the matrix. 
 For predictions, the value varies from 0 to 1, representing the confidence of the predicted relationship. 
-- #lane_centerline and #traffic_element are not required to be equal between ground truth and predictions. 
+- `#lane_centerline` and `#traffic_element` are not required to be equal between ground truth and predictions. 
 In the process of evaluation, a matching of ground truth and predictions is determined.
+
+
+### Unifying Map Elements Expansion
+In the Unifying Map Elements Expansion, we reformulate the annotation files to include additional labels.
+
+```
+{
+    'lane_segment': [                       (i lane segments in the current frame)
+        {   
+            'id':                           <int> -- unique ID in the current frame
+            'centerline':                   <float> [n, 3] -- 3D coordiate
+            'left_laneline':                <float> [n, 3] -- 3D coordiate
+            'left_laneline_type':           <int> -- type of the left laneline
+                                                0: 'none',
+                                                1: 'solid',
+                                                2: 'dash',
+            'right_laneline':               <float> [n, 3] -- 3D coordiate
+            'right_laneline_type':          <int> -- type of the right laneline
+            'is_intersection_or_connector'  <bool> -- whether the lane segment is in a intersection or connector
+            'confidence':                   <float> -- confidence, only for prediction
+        },
+        ...
+    ],
+    'traffic_element': [                    (j traffic elements in the current frame)
+        {   
+            'id':                           <int> -- unique ID in the current frame
+            'category':                     <int> -- traffic element category
+                                                1: 'traffic_light',
+                                                2: 'road_sign',
+            'attribute':                    <int> -- attribute of traffic element
+                                                0:  'unknown',
+                                                1:  'red',
+                                                2:  'green',
+                                                3:  'yellow',
+                                                4:  'go_straight',
+                                                5:  'turn_left',
+                                                6:  'turn_right',
+                                                7:  'no_left_turn',
+                                                8:  'no_right_turn',
+                                                9:  'u_turn',
+                                                10: 'no_u_turn',
+                                                11: 'slight_left',
+                                                12: 'slight_right',
+            'points':                       <float> [2, 2] -- top-left and bottom-right corners of the 2D bounding box
+            'confidence':                   <float> -- confidence, only for prediction
+        },
+        ...
+    ],
+    'area': [                               (k areas in the current frame)
+        {   
+            'id':                           <int> -- unique ID in the current frame
+            'category':                     <int> -- area category
+                                                1: 'pedestrian_crossing',
+                                                2: 'road_boundary',
+            'points':                       <float> [n, 3] -- 3D coordiate
+            'confidence':                   <float> -- confidence, only for prediction
+        },
+        ...
+    ],
+    'topology_lsls':                        <float> [n, n] -- adjacent matrix among lane segments
+    'topology_lste':                        <float> [n, k] -- adjacent matrix between lane segments and traffic elements
+}
+```

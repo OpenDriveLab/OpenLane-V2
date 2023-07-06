@@ -4,25 +4,36 @@
 **The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving.**
 
 <a href="#data">
-  <img alt="OpenLane-v2: v1.0" src="https://img.shields.io/badge/OpenLane--V2-v1.0-blueviolet"/>
-</a>
-<a href="#devkit">
-  <img alt="devkit: v0.1.0" src="https://img.shields.io/badge/devkit-v0.1.0-blueviolet"/>
+  <img alt="OpenLane-v2: v1.1" src="https://img.shields.io/badge/OpenLane--V2-v1.1-blueviolet"/>
 </a>
 <a href="#license">
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
 </a>
 
-**English | [中文](./README-zh-hans.md)**
+<!-- **English | [中文](./README-zh-hans.md)**
 
-_In terms of ambiguity, the English version shall prevail._
-
-
-<img src="./imgs/poster.gif" width="696px">
+_In terms of ambiguity, the English version shall prevail._ -->
 
 </div>
 
 <br>
+
+<div align="center">
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/6ef38e84-b1c6-49c1-bf20-6966562879d6" width="696px">
+  <!--  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/9f47c6be-3411-4440-9efa-836a156b7e44" width="696px"> -->
+</div>
+
+<br>
+
+## What's New
+Compared to lane centerlines, <b>lane segments</b> contain more detailed information, making them more closely aligned with the representation in HD maps and better suited for downstream tasks. In the [Unifying Map Elements Expansion](#unifying-map-elements-%EF%B8%8F), we introduce lane segments as the fundamental building blocks to build the lane network.
+![comparison](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/bbd02196-322e-48d5-8264-bedd2d03a288)
+
+<!-- <div align="center">
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/1e57d1c5-aa8f-43e8-85b0-ff229ac5cb21" width="696px">
+</div> -->
+
+Besides, in the [SD Map as Prior Expansion](#sd-map-as-prior-), we regard <b>SD maps</b> as extra sensor inputs to provide preliminary knowledge.
 
 ## Table of Contents
 - [News](#news)
@@ -32,6 +43,8 @@ _In terms of ambiguity, the English version shall prevail._
   - [3D Lane Detection 🛣️](#3d-lane-detection-%EF%B8%8F)
   - [Traffic Element Recognition 🚥](#traffic-element-recognition-)
   - [Topology Recognition 🕸️](#topology-recognition-%EF%B8%8F)
+  - [SD Map as Prior 🧭](#sd-map-as-prior-)
+  - [Unifying Map Elements 🗺️](#unifying-map-elements-%EF%B8%8F)
 - [Data](#data)
 - [Devkit](#devkit)
 - [Get Started](#get-started)
@@ -41,6 +54,7 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## News
 - [2023/07]
+  * Dataset `v1.1`: The SD Map as Prior Expansion and Unifying Map Elements Expansion released.
   * The test server is re-opened.
 - [2023/06]
   * The Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up. ~~The test server will be re-opened soon. Please stay tuned!~~
@@ -55,15 +69,16 @@ _In terms of ambiguity, the English version shall prevail._
   * Baseline model released.
 - [2023/01]
   * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
-  * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Leaderboard
-We maintain a [leaderboard](https://opendrivelab.com/AD23Challenge.html#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instruction [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
-### AD Challenge at CVPR 2023
-![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
+### OpenLane Topology
+We maintain a [leaderboard](https://opendrivelab.com/AD23Challenge.html#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instruction [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
+
+#### Autonomous Driving Challenge at CVPR 2023
+![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -94,27 +109,14 @@ The **diversity** of data enables models to generalize in different atmospheres 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Task
-The primary task of the dataset is **scene structure perception and reasoning**, which requires the model to recognize the dynamic drivable states of lanes in the surrounding environment. 
-The challenge of this dataset includes not only detecting lane centerlines and traffic elements but also recognizing the attribute of traffic elements and topology relationships on detected objects.
-We define the **[OpenLane-V2 Score (OLS)](./docs/metrics.md#openlane-v2-score)**, which is the average of various metrics covering different aspects of the primary task:
-
-<!-- $$
-\text{OLS} = \frac{1}{4} \bigg[ \text{DET}_{l} + \text{DET}_{t} + f(\text{TOP}_{ll}) + f(\text{TOP}_{lt}) \bigg].
-$$ -->
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/29263416/236969929-aa4c729f-9101-4fe8-9d32-51578f6a2001.png" width="500px" >
-</p>
-
-The metrics of different subtasks are described below.
 
 ### 3D Lane Detection 🛣️
 The [OpenLane](https://github.com/OpenDriveLab/OpenLane) dataset, which is the first real-world and the largest scaled 3D lane dataset to date, provides lane line annotations in 3D space.
 Similarly, we annotate 3D lane centerlines and include the F-Score for evaluating predicted results  of undirected lane centerlines.
 Furthermore, we define the subtask of 3D lane detection as detecting directed 3D lane centerlines from the given multi-view images covering the whole horizontal FOV.
-The instance-level evaluation metric of average precision $\text{DET}_{l}$ is utilized to measure the detection performance on lane centerlines (l).
 
 <p align="center">
-  <img src="./imgs/lane.gif" width="696px" >
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/16f9264e-1693-469d-880e-876449788cb4" width="696px" >
 </p>
 
 ### Traffic Element Recognition 🚥
@@ -122,32 +124,41 @@ Traffic elements and their attribute provide crucial information for autonomous 
 The attribute represents the semantic meaning of a traffic element, such as the red color of a traffic light. 
 In this subtask, on the given image in the front view, the location of traffic elements (traffic lights and road signs) and their attributes are demanded to be perceived simultaneously.
 Compared to typical 2D detection datasets, the challenge is that the size of traffic elements is tiny due to the large scale of outdoor environments.
-Similar to the typical 2D detection task, the metric of $\text{DET}_{t}$ is utilized to measure the performance of traffic elements (t) detection averaged over different attributes.
 
 <p align="center">
-  <img src="./imgs/traffic_element.gif" width="696px" >
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/bc35d569-7df0-4499-a98e-3b43a67aff1d" width="696px" >
 </p>
 
 ### Topology Recognition 🕸️
-We first define the task of recognizing topology relationships in the field of autonomous driving.
 Given multi-view images, the model learns to recognize the topology relationships among lane centerlines and between lane centerlines and traffic elements.
 The most similar task is link prediction in the field of graph, in which the vertices are given and only edges are predicted by models.
 In our case, both vertices and edges are unknown for the model.
 Thus, lane centerlines and traffic elements are needed to be detected first, and then the topology relationships are built.
-Adapted from the task of link prediction, $\text{TOP}$ is used for topology among lane centerlines (ll) and between lane centerlines and traffic elements (lt).
 
 <p align="center">
-  <img src="./imgs/topology.gif" width="696px" >
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/c7c1fc1e-ea26-4a71-b3d2-8baaa3afb08c" width="696px" >
+</p>
+
+### SD Map as Prior 🧭
+The standard-definition map (SD map) comprises road-level topology information and is commonly utilized for routing and navigation.
+In the SD Map as Prior Expansion, SD maps serve as extra sensor inputs that offer preliminary knowledge for the task of scene structure perception and reasoning.
+
+<p align="center">
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/38e25241-b831-4002-9791-e92d115c1c3f" width="696px" >
+</p>
+
+### Unifying Map Elements 🗺️
+Except for the centerline, a lane segment includes lanelines that define the boundaries of a lane and incorporate line types for particular purposes such as lane switching.
+Road boundaries and pedestrian crossing are represented as special areas which contribute to regulating the behaviors of vehicles.
+The Unifying Map Elements Expansion preserves the essence of the standard version of OpenLane-V2 while supplementing with additional elements to provide unified representations of the static driving scenes.
+
+<p align="center">
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/64465460-265c-4df0-a7b2-59774761e03c" width="696px" >
 </p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Data
-The OpenLane-V2 dataset is a large-scale dataset for scene structure perception and reasoning in the field of autonomous driving. 
-Following [OpenLane](https://github.com/OpenDriveLab/OpenLane), the first 3D lane dataset, we provide lane annotations in 3D space.
-The difference is that instead of lane lines, we annotate lane centerlines, which can be served as the trajectory for autonomous vehicles.
-Besides, we provide annotations on traffic elements (traffic lights and road signs) and their attribute, and the topology relationships among lane centerlines and between lane centerlines and traffic elements.
-
 The dataset is divided into two subsets. 
 **The `subset_A` serves as the primary subset and is utilized for the coming challenges and leaderboard, in which no external data, including the other subset, is allowed**.
 The `subset_B` can be used to test the generalization ability of the model.

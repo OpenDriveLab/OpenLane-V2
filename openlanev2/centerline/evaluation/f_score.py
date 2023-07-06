@@ -8,7 +8,7 @@
 # Adapted from:
 # https://github.com/OpenPerceptionX/OpenLane/tree/0aaf62045e897d2b20ecf1357ae7742634b8f972/eval/LANE_evaluation/lane3d
 #
-# Copyright (c) 2023 The OpenLane-v2 Dataset Authors. All Rights Reserved.
+# Copyright (c) 2023 The OpenLane-V2 Dataset Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

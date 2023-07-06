@@ -5,7 +5,7 @@
 #
 # Contact wanghuijie@pjlab.org.cn if you have any issue.
 #
-# Copyright (c) 2023 The OpenLane-v2 Dataset Authors. All Rights Reserved.
+# Copyright (c) 2023 The OpenLane-V2 Dataset Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ from .f_score import f1
 from .distance import pairwise, chamfer_distance, frechet_distance, iou_distance
 from ..io import io
 from ..preprocessing import check_results
-from ..utils import TRAFFIC_ELEMENT_ATTRIBUTE
+from ...utils import TRAFFIC_ELEMENT_ATTRIBUTE
 
 
 THRESHOLDS_FRECHET = [1.0, 2.0, 3.0]
