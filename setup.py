@@ -20,8 +20,27 @@
 # limitations under the License.
 # ==============================================================================
 
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
+
 from setuptools import setup, find_packages
 
+install_requires = [
+    "tqdm",
+    "ninja",
+    "jupyter",
+    "openmim",
+    "matplotlib",
+    "numpy >=1.22.0, <1.24.0",
+    "scikit-learn",
+    "similaritymeasures",
+    "opencv-python",
+    "scipy==1.8.0",
+    "ortools==9.2.9972",
+    "iso3166",
+    "chardet",
+]
 
 setup(
     name='openlanev2',
@@ -30,6 +49,7 @@ setup(
     author_email='wanghuijie@pjlab.org.cn',
     description='The official devkit of the OpenLane-V2 dataset.',
     url='https://github.com/OpenDriveLab/OpenLane-V2',
+    install_requires=install_requires,
     packages=find_packages(),
     license='Apache License 2.0',
 )
