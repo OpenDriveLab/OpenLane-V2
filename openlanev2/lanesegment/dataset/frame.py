@@ -99,6 +99,21 @@ class Frame:
         """
         image_path = self.get_image_path(camera)
         return cv2.cvtColor(io.cv2_imread(image_path), cv2.COLOR_BGR2RGB)
+    
+    def get_sd_map(self) -> np.ndarray:
+        r"""
+        Retuens the SD Map.
+
+        Returns
+        -------
+        np.ndarray
+            SD Map.
+
+        """
+        if 'sd_map' in self.meta['sensor']:
+            return self.meta['sensor']['sd_map']
+        else:
+            raise Exception('The SD Map as Prior Expansion is required.')
 
     def get_intrinsic(self, camera : str) -> dict:
         r"""

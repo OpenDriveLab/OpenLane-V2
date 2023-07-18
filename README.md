@@ -141,7 +141,7 @@ Thus, lane centerlines and traffic elements are needed to be detected first, and
 
 ### SD Map as Prior 🧭
 The standard-definition map (SD map) comprises road-level topology information and is commonly utilized for routing and navigation.
-In the SD Map as Prior Expansion, SD maps serve as extra sensor inputs that offer preliminary knowledge for the task of scene structure perception and reasoning.
+In the SD Map as Prior Expansion, SD maps serve as extra sensor inputs to offer preliminary knowledge.
 
 <p align="center">
   <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/38e25241-b831-4002-9791-e92d115c1c3f" width="696px" >
