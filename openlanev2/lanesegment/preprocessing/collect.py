@@ -143,7 +143,7 @@ def collect_lanesegment(root_path : str, data_dict : dict, collection : str, n_p
         for i, area in enumerate(frame['annotation']['area']):
             meta[identifier]['annotation']['area'][i]['points'] = fix_pts_interpolate( np.array(area['points']), n_points)
         for i, lane_segment in enumerate(frame['annotation']['lane_segment']):
-            meta[identifier]['annotation']['lane_segment'][i]['centerline'] = fix_pts_interpolate( np.array(area['points']), n_points)
+            meta[identifier]['annotation']['lane_segment'][i]['centerline'] = fix_pts_interpolate( np.array(lane_segment['centerline']), n_points)
             meta[identifier]['annotation']['lane_segment'][i]['left_laneline'] = fix_pts_interpolate( np.array(lane_segment['left_laneline']), n_points)
             meta[identifier]['annotation']['lane_segment'][i]['right_laneline'] = fix_pts_interpolate( np.array(lane_segment['right_laneline']), n_points)
         for i, traffic_element in enumerate(frame['annotation']['traffic_element']):
