@@ -28,7 +28,7 @@ from .distance import pairwise, area_distance, lane_segment_distance, lane_segme
 from ...utils import TRAFFIC_ELEMENT_ATTRIBUTE, AREA_CATEGOTY
 from ...centerline.io import io
 
-THRESHOLDS_AREA = [1.0, 2.0, 3.0]
+THRESHOLDS_AREA = [0.5, 1.0, 1.5]
 THRESHOLDS_LANESEG = [1.0, 2.0, 3.0]
 THRESHOLDS_TE = [0.75]
 THRESHOLD_RELATIONSHIP_CONFIDENCE = 0.5
