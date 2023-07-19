@@ -7,7 +7,7 @@
   <img alt="OpenLane-v2: v1.0" src="https://img.shields.io/badge/OpenLane--V2-v1.0-blueviolet"/>
 </a>
 <a href="#devkit">
-  <img alt="devkit: v0.1.0" src="https://img.shields.io/badge/devkit-v0.1.0-blueviolet"/>
+  <img alt="devkit: v1.0.0" src="https://img.shields.io/badge/devkit-v1.0.0-blueviolet"/>
 </a>
 <a href="#license">
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
@@ -52,10 +52,10 @@ _In terms of ambiguity, the English version shall prevail._
   *  ~~We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html).~~
 - [2023/02]
   * Dataset `v1.0`: Data of `subset_A` released.
+  * Devkit `v1.0.0`: Initial OpenLane-V2 devkit released.
   * Baseline model released.
 - [2023/01]
   * Dataset `v0.1`: Initial OpenLane-V2 dataset sample released.
-  * Devkit `v0.1.0`: Initial OpenLane-V2 devkit released.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
