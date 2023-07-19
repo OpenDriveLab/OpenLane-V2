@@ -5,7 +5,7 @@
 #
 # Contact wanghuijie@pjlab.org.cn if you have any issue.
 #
-# Copyright (c) 2023 The OpenLane-v2 Dataset Authors. All Rights Reserved.
+# Copyright (c) 2023 The OpenLane-V2 Dataset Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
