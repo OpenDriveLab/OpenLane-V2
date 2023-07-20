@@ -246,9 +246,9 @@ Please use the following citation when referencing OpenLane-V2:
 }
 
 @article{li2023toponet,
-  title={XXX}, 
-  author={XXX},
-  journal={arXiv preprint arXiv:2304.10440},
+  title={Topology Reasoning for Driving Scenes},
+  author={Li, Tianyu and Chen, Li and Geng, Xiangwei and Wang, Huijie and Li, Yang and Liu, Zhenbo and Jiang, Shengyin and Wang, Yuting and Xu, Hang and Xu, Chunjing and Wen, Feng and Luo, Ping and Yan, Junchi and Zhang, Wei and Wang, Xiaogang and Qiao, Yu and Li, Hongyang},
+  journal={arXiv preprint arXiv:2304.05277},
   year={2023}
 }
 ```
