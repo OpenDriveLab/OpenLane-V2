@@ -27,7 +27,7 @@ _In terms of ambiguity, the English version shall prevail._
 ## Table of Contents
 - [News](#news)
 - [Leaderboard](#leaderboard)
-- [Highlight](#highlight---why-we-are-exclusive)
+- [Highlight](#highlights---why-exclusive)
 - [Task](#task)
   - [3D Lane Detection 🛣️](#3d-lane-detection-%EF%B8%8F)
   - [Traffic Element Recognition 🚥](#traffic-element-recognition-)
@@ -43,13 +43,13 @@ _In terms of ambiguity, the English version shall prevail._
 - [2023/07]
   * The test server is re-opened.
 - [2023/06]
-  * The Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up. ~~The test server will be re-opened soon. Please stay tuned!~~
+  * The Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up.
 - [2023/04]
   * A strong baseline based on [InternImage](https://github.com/OpenGVLab/InternImage) released. Check out [here](https://github.com/OpenGVLab/InternImage/tree/master/autonomous_driving/openlane-v2).
   * [OpenLane-V2 paper](https://arxiv.org/abs/2304.10440) is available on arXiv.
   * A stronger baseline released. Check out [here](https://github.com/OpenDriveLab/OpenLane-V2/blob/master/plugin/mmdet3d/configs/baseline_large.py).
-- ~~[2023/03]~~
-  *  ~~We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html).~~
+- [2023/03]
+  *  We are hosting a Challenge at the [CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html).
 - [2023/02]
   * Dataset `v1.0`: Data of `subset_A` released.
   * Devkit `v1.0.0`: Initial OpenLane-V2 devkit released.
@@ -61,19 +61,19 @@ _In terms of ambiguity, the English version shall prevail._
 
 ## Leaderboard
 We maintain a [leaderboard](https://opendrivelab.com/AD23Challenge.html#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instruction [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
-### AD Challenge at CVPR 2023
+### Autonomous Driving Challenge at CVPR 2023
 ![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Highlight - why we are exclusive?
+## Highlights - why exclusive?
 
 ### The world is three-dimensional - Introducing 3D lane
 Previous datasets annotate lanes on images in the perspective view. Such a type of 2D annotation is insufficient to fulfill real-world requirements.
-Following the [OpenLane](https://github.com/OpenDriveLab/OpenLane) dataset, we annotate **lanes in 3D space** to reflect their properties in the real world.
+Following the [OpenLane V1](https://github.com/OpenDriveLab/OpenLane) dataset, we annotate **lanes in 3D space** to reflect their properties in the real world.
 
-### Be aware of traffic signals - Recognizing Extremely Small road elements
+### Be aware of traffic signals - Recognizing Extremely small road elements
 Not only preventing collision but also facilitating efficiency is essential. 
 Vehicles follow predefined traffic rules for self-disciplining and cooperating with others to ensure a safe and efficient traffic system.
 **Traffic elements** on the roads, such as traffic lights and road signs, provide practical and real-time information.
@@ -85,7 +85,7 @@ Also, lanes have their predecessors and successors to build the map.
 Autonomous vehicles are required to **reason** about the **topology relationships** to drive in the right way.
 In this dataset, we hope to shed light on the task of **scene structure perception and reasoning**.
 
-### Data scale and diversity matters - building on Top of Awesome Benchmarks
+### Data scale and diversity matters - building on top of renowned Benchmarks
 Experience from the sunny day does not apply to the dancing snowflakes.
 For machine learning, data is the must-have food.
 We provide annotations on data collected in various cities, from Austin to Singapore and from Boston to Miami.
@@ -149,8 +149,10 @@ The difference is that instead of lane lines, we annotate lane centerlines, whic
 Besides, we provide annotations on traffic elements (traffic lights and road signs) and their attribute, and the topology relationships among lane centerlines and between lane centerlines and traffic elements.
 
 The dataset is divided into two subsets. 
-**The `subset_A` serves as the primary subset and is utilized for the coming challenges and leaderboard, in which no external data, including the other subset, is allowed**.
-The `subset_B` can be used to test the generalization ability of the model.
+
+- **The `subset_A` serves as the primary subset and is utilized for the coming challenges and leaderboard, in which no external data, including the other subset, is allowed**.
+
+- The `subset_B` can be used to test the generalization ability of the model.
 For more details, please refer to the corresponding pages: [use of data](./data/README.md), [notes of annotation](./docs/annotation.md), and [dataset statistics](./docs/statistics.md).
 
 [Download](./data/README.md#download) now to discover our dataset!
@@ -239,6 +241,13 @@ Please use the following citation when referencing OpenLane-V2:
 @article{wang2023openlanev2,
   title={OpenLane-V2: A Topology Reasoning Benchmark for Scene Understanding in Autonomous Driving}, 
   author={Wang, Huijie and Li, Tianyu and Li, Yang and Chen, Li and Sima, Chonghao and Liu, Zhenbo and Wang, Yuting and Jiang, Shengyin and Jia, Peijin and Wang, Bangjun and Wen, Feng and Xu, Hang and Luo, Ping and Yan, Junchi and Zhang, Wei and Li, Hongyang},
+  journal={arXiv preprint arXiv:2304.10440},
+  year={2023}
+}
+
+@article{li2023toponet,
+  title={XXX}, 
+  author={XXX},
   journal={arXiv preprint arXiv:2304.10440},
   year={2023}
 }
