@@ -26,6 +26,7 @@ from __future__ import division
 
 from setuptools import setup, find_packages
 
+
 install_requires = [
     "tqdm",
     "ninja",
@@ -40,11 +41,12 @@ install_requires = [
     "ortools==9.2.9972",
     "iso3166",
     "chardet",
+    "shapely==2.0.0",
 ]
 
 setup(
     name='openlanev2',
-    version='1.0.0',
+    version='2.0.0',
     author='The OpenLane-V2 Dataset Authors',
     author_email='wanghuijie@pjlab.org.cn',
     description='The official devkit of the OpenLane-V2 dataset.',
