@@ -1,6 +1,6 @@
 # Submission
 
-## Format
+## OpenLane Topology
 The submitted results are required to be stored in a pickle file, which is a dict of identifier and [formatted predictions](../data/README.md#annotations) of a frame:
 
 ```

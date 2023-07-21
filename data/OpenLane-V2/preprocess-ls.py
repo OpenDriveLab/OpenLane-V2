@@ -21,7 +21,7 @@
 # =============================================================================='
 
 from openlanev2.centerline.io import io
-from openlanev2.centerline.preprocessing import collect
+from openlanev2.lanesegment.preprocessing import collect
 
 
 with_sd_map = False # TODO: include SD Maps as sensor inputs or not
@@ -31,11 +31,15 @@ for file in io.os_listdir(root_path):
     if file.endswith('json'):
         subset = file.split('.')[0]
         for split, segments in io.json_load(f'{root_path}/{file}').items():
-            point_interval = 1 if split == 'train' else 20
             collect(
                 root_path, 
                 {split: segments}, 
-                f'{subset}_{split}' if not with_sd_map else f'{subset}_{split}_sd', 
-                point_interval=point_interval,
-                with_sd_map=with_sd_map,
+                f'{subset}_{split}_ls' if not with_sd_map else f'{subset}_{split}_ls_sd',
+                with_sd_map = with_sd_map,
+                n_points={
+                    'area': 20,
+                    'centerline': 10,
+                    'left_laneline': 20,
+                    'right_laneline': 20,
+                },
             )

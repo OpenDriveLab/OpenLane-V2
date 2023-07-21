@@ -1,7 +1,7 @@
 # ==============================================================================
 # Binaries and/or source for the following packages or projects 
 # are presented under one or more of the following open source licenses:
-# utils.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
+# pv.py    The OpenLane-V2 Dataset Authors    Apache License, Version 2.0
 #
 # Contact wanghuijie@pjlab.org.cn if you have any issue.
 #
@@ -20,40 +20,26 @@
 # limitations under the License.
 # ==============================================================================
 
-TRAFFIC_ELEMENT_ATTRIBUTE = {
-    'unknown':          0,
-    'red':              1,
-    'green':            2,
-    'yellow':           3,
-    'go_straight':      4,
-    'turn_left':        5,
-    'turn_right':       6,
-    'no_left_turn':     7,
-    'no_right_turn':    8,
-    'u_turn':           9,
-    'no_u_turn':        10,
-    'slight_left':      11,
-    'slight_right':     12,
-}
+import cv2
+import numpy as np
 
-LANELINE_CATEGORY = {
-    'none':             0,
-    'solid':            1,
-    'dash':             2,
-}
+from .bev import BEV_SCALE, BEV_RANGE
+from .utils import THICKNESS, COLOR_DICT
+from ...utils import SD_MAP_RANGE
 
-AREA_CATEGOTY = {
-    'pedestrian_crossing':  1,
-    'road_boundary':        2,
-}
-
-SD_MAP_RANGE = [-50, -25, 50, 25]
-SD_MAP_CATEGORY = ['road', 'cross_walk', 'side_walk']
+assert BEV_RANGE[0] == SD_MAP_RANGE[0] and BEV_RANGE[1] == SD_MAP_RANGE[2] \
+    and BEV_RANGE[2] == SD_MAP_RANGE[1] and BEV_RANGE[3] == SD_MAP_RANGE[3]
 
 
-def format_metric(metric):
-    for key, val in metric.items():
-        print(f'{key} - {val["score"]}')
-        for k, v in val.items():
-            if 'score' not in k:
-                print(f'    {k} - {v}')
+def draw_sd_map(sd_map):
+    image = np.ones((
+        BEV_SCALE * (BEV_RANGE[1] - BEV_RANGE[0]),
+        BEV_SCALE * (BEV_RANGE[3] - BEV_RANGE[2]),
+        3,
+    ), dtype=np.int32) * 191
+    if sd_map is not None:
+        for i, category in enumerate(sd_map):
+            for road in sd_map[category]:
+                road = (BEV_SCALE * (-road[:, :2] + np.array([BEV_RANGE[1] , BEV_RANGE[3]]))).astype(int)
+                cv2.polylines(image, [road[:, [1,0]]], False, COLOR_DICT[i], THICKNESS * 10)
+    return image
