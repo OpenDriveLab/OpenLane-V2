@@ -74,7 +74,10 @@ def collect(root_path : str, data_dict : dict, collection : str, with_sd_map : b
         if 'annotation' not in frame:
             continue
         for i, area in enumerate(frame['annotation']['area']):
-            meta[identifier]['annotation']['area'][i]['points'] = _fix_pts_interpolate(np.array(area['points']), n_points['area'])
+            if area['points'][0] == area['points'][-1]:
+                meta[identifier]['annotation']['area'][i]['points'] = _fix_pts_interpolate(np.array(area['points']), n_points['area']+1)[:-1]
+            else:
+                meta[identifier]['annotation']['area'][i]['points'] = _fix_pts_interpolate(np.array(area['points']), n_points['area'])
         for i, lane_segment in enumerate(frame['annotation']['lane_segment']):
             meta[identifier]['annotation']['lane_segment'][i]['centerline'] = _fix_pts_interpolate(np.array(lane_segment['centerline']), n_points['centerline'])
             meta[identifier]['annotation']['lane_segment'][i]['left_laneline'] = _fix_pts_interpolate(np.array(lane_segment['left_laneline']), n_points['left_laneline'])
