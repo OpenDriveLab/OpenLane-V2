@@ -58,8 +58,13 @@ Please follow the steps below to get familiar with the OpenLane-V2 dataset.
 
 
 ## Train a Model
+
 Plug-ins are provided to start training models on the OpenLane-V2 dataset.
 We appreciate your valuable feedback and contributions to plug-ins on different frameworks.
+
+### TODO
+- [ ] Plug-in for dataset `v2.0`
+- [x] Plug-in for dataset `v1.0`
 
 ### Baseline
 
