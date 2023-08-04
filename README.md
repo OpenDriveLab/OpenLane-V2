@@ -82,10 +82,12 @@ In this task, we use [OpenLane-V2 Score (OLS)](docs/metrics.md#openlane-topology
 
 We plan to release a trailer version of the upcoming challenge. Please stay tuned for more details in `Late August`.
 
+- Challenge website: [AD24Challenge](https://opendrivelab.com/AD24Challenge.html) 
+
 ### OpenLane Topology Challenge at CVPR 2023 (Server remains `active`)
 We maintain a [leaderboard](https://opendrivelab.com/AD23Challenge.html#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
 
-- Challenge webiste: [https://opendrivelab.com/AD23Challenge.html](https://opendrivelab.com/AD23Challenge.html)
+- Challenge website: [AD23Challenge](https://opendrivelab.com/AD23Challenge.html#openlane_topology)
 
 ![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
