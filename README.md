@@ -222,6 +222,7 @@ The **diversity** of data enables models to generalize in different atmospheres 
 ## License & Citation
 
 > Prior to using the OpenLane-V2 dataset, you should agree to the terms of use of the [nuScenes](https://www.nuscenes.org/nuscenes) and [Argoverse 2](https://www.argoverse.org/av2.html) datasets respectively.
+> OpenLane-V2 is distributed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0) license.
 > All code within this repository is under [Apache License 2.0](./LICENSE).
 
 Please use the following citation when referencing OpenLane-V2:
