@@ -249,7 +249,7 @@ Please use the following citation when referencing OpenLane-V2:
 ## Related Resources
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-- [DriveAGI](https://github.com/OpenDriveLab/DriveAGI) | [DriveLM](https://github.com/OpenDriveLab/DriveLM) (TBA) | [OpenScene](https://github.com/OpenDriveLab/OpenScene)
+- [DriveAGI](https://github.com/OpenDriveLab/DriveAGI) | [DriveLM](https://github.com/OpenDriveLab/DriveLM) | [OpenScene](https://github.com/OpenDriveLab/OpenScene)
 - [TopoNet](https://github.com/OpenDriveLab/TopoNet)
 - [PersFormer](https://github.com/OpenDriveLab/PersFormer_3DLane) | [OpenLane](https://github.com/OpenDriveLab/OpenLane)
 - [BEV Perception Survey & Recipe](https://github.com/OpenDriveLab/BEVPerception-Survey-Recipe) | [BEVFormer](https://github.com/fundamentalvision/BEVFormer)
