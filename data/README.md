@@ -20,7 +20,16 @@ It is recommended to use provided command line interface (CLI) for acceleration.
 |  | Image (val) | [image_7](https://drive.google.com/file/d/19N5q-zbjE2QWngAT9xfqgOR3DROTAln0/view?usp=share_link) | [image_7](https://pan.baidu.com/s/1rRkPWg-zG2ygsbMhwXjPKg?pwd=qsvb) | c73af4a7aef2692b96e4e00795120504 | ~21.0G |
 |  | Image (test) | [image_8](https://drive.google.com/file/d/1CvT9w0q8vPldfaajI5YsAqM0ZINT1vJv/view?usp=share_link) | [image_8](https://pan.baidu.com/s/10zjKeuAw350fwTYAeuSLxg?pwd=99ch) | fb2f61e7309e0b48e2697e085a66a259 | ~21.2G |
 |  | SD Map | [sdmap](https://drive.google.com/file/d/1nTsdxRZy_6N-itYndJujb-Ipwom6A5fh/view?usp=sharing) | [sdmap]( https://pan.baidu.com/s/1BwtWcIZ4cZE-yqcUZAcPrg?pwd=56q4) | de22c7be880b667f1b3373ff665aac2e | ~7M |
-| subset_B | coming soon | - | - | - | - |
+| subset_B | OpenLane-V2 | [info](https://drive.google.com/file/d/1Kn1tTwh9VrVa8nKwipL0bs9J5G9YLtIR/view?usp=drive_link) | [info](https://pan.baidu.com/s/16PGcEwD4sUuoxwpnwLR2ug?pwd=2o1b) | 27696b1ed1d99b1f70fdb68f439dc87d | ~7.7G |
+|  | Image (train) | [image_0](https://drive.google.com/file/d/1L7Uy6g3brT3kXj25RLqxAIBhxWcFkeDE/view?usp=drive_link) | [image_0](https://pan.baidu.com/s/1roo9vwYtgoHI-Uvh-yVVoQ?pwd=k2re) | 0876c6b2381bacedeb3be16e57c7d59b | ~3.4G |
+|  |  | [image_1](https://drive.google.com/file/d/1csxAVAXkfyACmcRMUyjtKdXQubFc7l62/view?usp=drive_link) | [image_1](https://pan.baidu.com/s/1uiCPh2XGb6Fe8JyGrQRVUw?pwd=tq88) | ecdec8ff8c72525af322032a312aad10 | ~3.3G |
+|  |  | [image_2](https://drive.google.com/file/d/1T4AIICJnSz_-BJ6BiCYxna7o_cgbIZfr/view?usp=drive_link) | [image_2](https://pan.baidu.com/s/1vcz9Gyvbs3rlIgekJcA3rw?pwd=rkwh) | b720bf7fdf0ebd44b71beffc84722359 | ~3.3G |
+|  |  | [image_3](https://drive.google.com/file/d/1zjerxQ_gAVh-NkWi1erP5C6aeD6JB_Os/view?usp=drive_link) | [image_3](https://pan.baidu.com/s/1VrCwAEgHSuDzHaokccqfSw?pwd=7tbh) | ac3bc9400ade6c47c396af4b12bbd0e0 | ~3.4G |
+|  |  | [image_4](https://drive.google.com/file/d/1K8eTn9lI_WDNaifLnhnnhL0AzZVZyAYu/view?usp=drive_link) | [image_4](https://pan.baidu.com/s/1fxFcnCi-B_4MW_UWf4wSCA?pwd=1675) | fa4c4a04b5ad3eac817e6368047d0d89 | ~3.5G |
+|  |  | [image_5](https://drive.google.com/file/d/1_jveO4-Nn2uju_vfGW5qN4kohp1TsUc8/view?usp=drive_link) | [image_5](https://pan.baidu.com/s/12WBEYbIcNbEQjiFSZDtzcg?pwd=3tvn) | 19d2cc92514e65270779e405d3a93c61 | ~3.6G |
+|  |  | [image_6](https://drive.google.com/file/d/1EDBRXvkb6Z32ydcKrAsvgr-dmejiJb5K/view?usp=drive_link) | [image_6](https://pan.baidu.com/s/1YEjg0vLQXEnSX5GLqt4iiA?pwd=5z7j) | d4f56c562f11a6bcc918f2d20441c42c | ~3.3G |
+|  | Image (val) | [image_7](https://drive.google.com/file/d/1xSiBF3FMccvH2LPoPl3pgq2Ojv-crFaJ/view?usp=drive_link) | [image_7](https://pan.baidu.com/s/1I3Yh00jJ7DbFGQdns5tuOg?pwd=3pny) | 443045d7a3faf5998af27e2302d3503e | ~5.0G |
+|  | Image (test) | [image_8](https://drive.google.com/file/d/1NS-CuOLYq1l0-AYwSeT13L1yjk-ojrSF/view?usp=drive_link) | [image_8](https://pan.baidu.com/s/11yKRL3yonLaG3X4fg0BrZg?pwd=qtt3) | 6ecb7a9e866e29ed73d335c2d897f50e | ~5.4G |
 
 > - `OpenLane-V2` contains annotations for the initial task of OpenLane Topology.
 > - `Map Element Bucket` contains annotations for the task of Driving Scene Topology.

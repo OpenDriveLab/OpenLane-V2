@@ -52,6 +52,7 @@ We are happy to announce an important update to the OpenLane family, featuring t
 
 ## News
 
+- **`2023/08/28`** Dataset `subset_B` released.
 - **`2023/07/21`** Dataset `v2.0` and Devkit `v2.0.0` released.
 - **`2023/07/05`** The [test server of OpenLane Topology](https://eval.ai/web/challenges/challenge-page/1925/overview) is re-opened.
 - **`2023/06/01`** The [Challenge at the CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up.
