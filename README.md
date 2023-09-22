@@ -19,7 +19,7 @@ _In terms of ambiguity, the English version shall prevail._ -->
 
 </div>
 
-> - [Paper in arXiv](https://arxiv.org/abs/2304.10440)
+> - [Paper in arXiv](https://arxiv.org/abs/2304.10440) (Accepted at NeurIPS 2023 Track Datasets and Benchmarks)
 > - [CVPR 2023 Autonomous Driving Challenge  - OpenLane Topology Track](https://opendrivelab.com/AD23Challenge.html#openlane_topology)
 > - Point of contact: [Huijie (王晖杰)](mailto:wanghuijie@pjlab.org.cn) or [sephy.fine@gmail.com](mailto:sephy.fine@gmail.com)
 
