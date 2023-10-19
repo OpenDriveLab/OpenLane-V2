@@ -9,7 +9,7 @@ It is recommended to use provided command line interface (CLI) for acceleration.
 | --- | --- | --- | --- | --- | --- |
 | sample | OpenLane-V2 |[sample](https://drive.google.com/file/d/1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6/view?usp=share_link) | [sample](https://pan.baidu.com/s/1ncqwDtuihKTBZROL5vdCAQ?pwd=psev) | 21c607fa5a1930275b7f1409b25042a0 | ~300M |
 | subset_A | OpenLane-V2 | [info](https://drive.google.com/file/d/1t47lNF4H3WhSsAqgsl9lSLIeO0p6n8p4/view?usp=share_link) | [info](https://pan.baidu.com/s/1uXpX4hqlMJLm0W6l12dJ-A?pwd=6rzj) |95bf28ccf22583d20434d75800be065d | ~8.8G |
-|  | Map Element Bucket | [info](https://drive.google.com/file/d/1FcXfg3fiEA2Snsy9vfhKxQ87WUlTvVKq/view?usp=sharing) | [info](https://pan.baidu.com/s/1Tj51f_4NVsfco3nESgsesQ?pwd=hyy4) | f85321cfc387fe97417af5e61cec9d2f | ~240M |
+|  | Map Element Bucket | [info](https://drive.google.com/file/d/1g-woGcV6vvQ81_5T5eljN9CZ1B1q0ssf/view?usp=share_link) | [info](https://drive.google.com/file/d/1g-woGcV6vvQ81_5T5eljN9CZ1B1q0ssf/view?usp=share_link) | 055d5c8f6ffd54d1255229e73477a687 | ~240M |
 |  | Image (train) | [image_0](https://drive.google.com/file/d/1jio4Gj3dNlXmSzebO6D7Uy5oz4EaTNTq/view?usp=share_link) | [image_0](https://pan.baidu.com/s/12aV4CoT8znEY12q4M8XFiw?pwd=m204) | 8ade7daeec1b64f8ab91a50c81d812f6 | ~14.0G |
 |  |  | [image_1](https://drive.google.com/file/d/1IgnvZ2UljL49AzNV6CGNGFLQo6tjNFJq/view?usp=share_link) | [image_1](https://pan.baidu.com/s/1SArnlA2_Om9o0xcGd6-EwA?pwd=khx8) | c78e776f79e2394d2d5d95b7b5985e0f | ~14.3G |
 |  |  | [image_2](https://drive.google.com/file/d/1ViEsK5hukjMGfOm_HrCiQPkGArWrT91o/view?usp=share_link) | [image_2](https://pan.baidu.com/s/1ZghG7gwJqFrGxCEcUffp8A?pwd=0xgm) | 4bf09079144aa54cb4dcd5ff6e00cf79 | ~14.2G |
