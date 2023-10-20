@@ -84,7 +84,8 @@ def chamfer_distance(gt: np.ndarray, pred: np.ndarray) -> float:
 
     """
     assert gt.ndim == pred.ndim == 2 and gt.shape[1] == pred.shape[1]
-
+    if (gt[0] == gt[-1]).all():
+        gt = gt[:-1]
     dist_mat = cdist(pred, gt)
 
     dist_pred = dist_mat.min(-1).mean()

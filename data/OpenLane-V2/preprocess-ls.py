@@ -39,7 +39,7 @@ for file in io.os_listdir(root_path):
                 n_points={
                     'area': 20,
                     'centerline': 10,
-                    'left_laneline': 20,
-                    'right_laneline': 20,
+                    'left_laneline': 10,
+                    'right_laneline': 10,
                 },
             )
