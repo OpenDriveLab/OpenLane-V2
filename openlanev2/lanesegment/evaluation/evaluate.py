@@ -104,7 +104,7 @@ def _tpfp(gts, preds, confidences, distance_matrix, distance_threshold):
 
     tp = np.zeros((num_preds), dtype=np.float32)
     fp = np.zeros((num_preds), dtype=np.float32)
-    idx_match_gt = np.ones((num_preds)) * np.nan
+    idx_match_gt = np.ones((num_preds), dtype=int) * np.nan
 
     if num_gts == 0:
         fp[...] = 1
@@ -433,29 +433,30 @@ def _mAP_topology_lsls(gts, preds, distance_thresholds):
 
     """
     acc = []
-    for r in range(10):
-        for distance_threshold in distance_thresholds:
-            for token in gts.keys():
-                preds_topology_lsls_unmatched = preds[token]['topology_lsls']
+    for distance_threshold in distance_thresholds:
+        for token in gts.keys():
+            preds_topology_lsls_unmatched = preds[token]['topology_lsls']
 
-                idx_match_gt = preds[token][f'lane_segment_{distance_threshold}_idx_match_gt']
-                confidence = preds[token][f'lane_segment_{distance_threshold}_confidence']
-                confidence_thresholds = preds[token][f'lane_segment_{distance_threshold}_confidence_thresholds']
-                gt_pred = {m: i for i, (m, c) in enumerate(zip(idx_match_gt, confidence)) if c >= confidence_thresholds[r] and not np.isnan(m)}
+            idx_match_gt = preds[token][f'lane_segment_{distance_threshold}_idx_match_gt']
+            gt_pred = {m: i for i, m in enumerate(idx_match_gt) if not np.isnan(m)}
 
-                gts_topology_lsls = gts[token]['topology_lsls']
-                if 0 in gts_topology_lsls.shape:
-                    continue
+            gts_topology_lsls = gts[token]['topology_lsls']
+            if 0 in gts_topology_lsls.shape:
+                continue
 
-                preds_topology_lsls = np.ones_like(gts_topology_lsls, dtype=gts_topology_lsls.dtype) * np.nan
-                for i in range(preds_topology_lsls.shape[0]):
-                    for j in range(preds_topology_lsls.shape[1]):
-                        if i in gt_pred and j in gt_pred:
-                            preds_topology_lsls[i][j] = preds_topology_lsls_unmatched[gt_pred[i]][gt_pred[j]]
-                preds_topology_lsls[np.isnan(preds_topology_lsls)] = 1 - gts_topology_lsls[np.isnan(preds_topology_lsls)]
+            gt_indices = np.array(list(gt_pred.keys())).astype(int)
+            pred_indices = np.array(list(gt_pred.values())).astype(int)
+            preds_topology_lsls = np.ones_like(gts_topology_lsls, dtype=gts_topology_lsls.dtype) * np.nan
+            xs = gt_indices[:, None].repeat(len(gt_indices), 1)
+            ys = gt_indices[None, :].repeat(len(gt_indices), 0)
+            preds_topology_lsls[xs, ys] = preds_topology_lsls_unmatched[pred_indices][:, pred_indices]
+            preds_topology_lsls[np.isnan(preds_topology_lsls)] = (
+                1 - gts_topology_lsls[np.isnan(preds_topology_lsls)]) * (0.5 + np.finfo(np.float32).eps)
 
-                acc.append(_AP_directerd(gts=gts_topology_lsls, preds=preds_topology_lsls))
+            acc.append(_AP_directerd(gts=gts_topology_lsls, preds=preds_topology_lsls))
 
+    if len(acc) == 0:
+        return np.float32(0)
     return np.hstack(acc).mean()
 
 def _mAP_topology_lste(gts, preds, distance_thresholds):
@@ -478,76 +479,38 @@ def _mAP_topology_lste(gts, preds, distance_thresholds):
 
     """
     acc = []
-    for r in range(10):
-        for distance_threshold_lane_segment in distance_thresholds['lane_segment']:
-            for distance_threshold_traffic_element in distance_thresholds['traffic_element']:
-                for token in gts.keys():
-                    preds_topology_lste_unmatched = preds[token]['topology_lste']
+    for distance_threshold_lane_segment in distance_thresholds['lane_segment']:
+        for distance_threshold_traffic_element in distance_thresholds['traffic_element']:
+            for token in gts.keys():
+                preds_topology_lste_unmatched = preds[token]['topology_lste']
 
-                    idx_match_gt_lane_segment = preds[token][f'lane_segment_{distance_threshold_lane_segment}_idx_match_gt']
-                    confidence_lane_segment = preds[token][f'lane_segment_{distance_threshold_lane_segment}_confidence']
-                    confidence_thresholds_lane_segment = preds[token][f'lane_segment_{distance_threshold_lane_segment}_confidence_thresholds']
-                    gt_pred_lane_segment = {
-                        m: i for i, (m, c) in enumerate(zip(idx_match_gt_lane_segment, confidence_lane_segment)) \
-                        if c >= confidence_thresholds_lane_segment[r] and not np.isnan(m)
-                    }
+                idx_match_gt_lane_segment = preds[token][f'lane_segment_{distance_threshold_lane_segment}_idx_match_gt']
+                gt_pred_lane_segment = {m: i for i, m in enumerate(idx_match_gt_lane_segment) if not np.isnan(m)}
 
-                    idx_match_gt_traffic_element = preds[token][f'traffic_element_{distance_threshold_traffic_element}_idx_match_gt']
-                    confidence_traffic_element = preds[token][f'traffic_element_{distance_threshold_traffic_element}_confidence']
-                    confidence_thresholds_traffic_element = preds[token][f'traffic_element_{distance_threshold_traffic_element}_confidence_thresholds']
-                    gt_pred_traffic_element = {
-                        m: i for i, (m, c) in enumerate(zip(idx_match_gt_traffic_element, confidence_traffic_element)) \
-                        if c >= confidence_thresholds_traffic_element[r] and not np.isnan(m)
-                    }
+                idx_match_gt_traffic_element = preds[token][f'traffic_element_{distance_threshold_traffic_element}_idx_match_gt']
+                gt_pred_traffic_element = {m: i for i, m in enumerate(idx_match_gt_traffic_element) if not np.isnan(m)}
 
-                    gts_topology_lste = gts[token]['topology_lste']
-                    if 0 in gts_topology_lste.shape:
-                        continue
+                gts_topology_lste = gts[token]['topology_lste']
+                if 0 in gts_topology_lste.shape:
+                    continue
 
-                    preds_topology_lste = np.ones_like(gts_topology_lste, dtype=gts_topology_lste.dtype) * np.nan
-                    for i in range(preds_topology_lste.shape[0]):
-                        for j in range(preds_topology_lste.shape[1]):
-                            if i in gt_pred_lane_segment and j in gt_pred_traffic_element:
-                                preds_topology_lste[i][j] = preds_topology_lste_unmatched[gt_pred_lane_segment[i]][gt_pred_traffic_element[j]]
-                    preds_topology_lste[np.isnan(preds_topology_lste)] = 1 - gts_topology_lste[np.isnan(preds_topology_lste)]
+                gt_indices_ls = np.array(list(gt_pred_lane_segment.keys())).astype(int)
+                pred_indices_ls = np.array(list(gt_pred_lane_segment.values())).astype(int)
+                gt_indices_te = np.array(list(gt_pred_traffic_element.keys())).astype(int)
+                pred_indices_te = np.array(list(gt_pred_traffic_element.values())).astype(int)
 
-                    acc.append(_AP_undirecterd(gts=gts_topology_lste, preds=preds_topology_lste))
-    
+                preds_topology_lste = np.ones_like(gts_topology_lste, dtype=gts_topology_lste.dtype) * np.nan
+                xs = gt_indices_ls[:, None].repeat(len(gt_indices_te), 1)
+                ys = gt_indices_te[None, :].repeat(len(gt_indices_ls), 0)
+                preds_topology_lste[xs, ys] = preds_topology_lste_unmatched[pred_indices_ls][:, pred_indices_te]
+                preds_topology_lste[np.isnan(preds_topology_lste)] = (
+                    1 - gts_topology_lste[np.isnan(preds_topology_lste)]) * (0.5 + np.finfo(np.float32).eps)
+
+                acc.append(_AP_undirecterd(gts=gts_topology_lste, preds=preds_topology_lste))
+
+    if len(acc) == 0:
+        return np.float32(0)
     return np.hstack(acc).mean()
-
-# def _matched_list(gts, preds, distance_matrices, distance_threshold, object_type, filter):
-#     gts_tp = {}
-#     preds_tp = {}
-#     for token in gts.keys():
-#         gt = [gt for gt in gts[token][object_type] if filter(gt)]
-#         pred = [pred for pred in preds[token][object_type] if filter(pred)]
-#         confidence = [pred['confidence'] for pred in preds[token][object_type] if filter(pred)]
-#         filtered_distance_matrix = distance_matrices[token].copy()
-#         filtered_distance_matrix = filtered_distance_matrix[[filter(gt) for gt in gts[token][object_type]], :]
-#         filtered_distance_matrix = filtered_distance_matrix[:, [filter(pred) for pred in preds[token][object_type]]]
-#         tp, fp, idx_match_gt = _tpfp(
-#             gts=gt, 
-#             preds=pred, 
-#             confidences=confidence, 
-#             distance_matrix=filtered_distance_matrix, 
-#             distance_threshold=distance_threshold,
-#         )
-
-#         gt_tp = []
-#         pred_tp = []
-#         order = []
-#         for idx, flag in enumerate(idx_match_gt):
-#             if flag != np.nan:
-#                 gt_tp.append(gt[flag.astype(np.int32)])
-#                 pred_tp.append(pred[idx])
-#                 order.append(flag.astype(np.int32))
-#                 gt_tp = [gt_tp[i] for i in order]
-#                 pred_tp = [pred_tp[i] for i in order]
-        
-#         gts_tp[token] = {object_type: gt_tp}
-#         preds_tp[token] = {object_type: pred_tp}
-
-#     return gts_tp, preds_tp
 
 def evaluate(ground_truth, predictions, verbose=True):
     r"""
@@ -706,10 +669,4 @@ def evaluate(ground_truth, predictions, verbose=True):
         np.sqrt(metrics['OpenLane-V2 UniScore']['TOP_lt']),
     ]).mean()
 
-    """
-        Error
-    """
-
-    # gts_matched, preds_matched = _matched_list(gts=gts, preds=preds, distance_matrices=distance_matrices['laneseg'], distance_threshold=THRESHOLDS_LANESEG[1], object_type='lane_segment', filter=lambda _: True) 
-    
     return metrics
