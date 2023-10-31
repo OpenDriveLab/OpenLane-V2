@@ -44,7 +44,7 @@ install_requires = [
 
 setup(
     name='openlanev2',
-    version='1.0.0',
+    version='1.1.0',
     author='The OpenLane-V2 Dataset Authors',
     author_email='wanghuijie@pjlab.org.cn',
     description='The official devkit of the OpenLane-V2 dataset.',

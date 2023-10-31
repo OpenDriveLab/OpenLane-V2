@@ -7,7 +7,7 @@
   <img alt="OpenLane-v2: v1.0" src="https://img.shields.io/badge/OpenLane--V2-v1.0-blueviolet"/>
 </a>
 <a href="#开发工具">
-  <img alt="devkit: v0.1.0" src="https://img.shields.io/badge/devkit-v0.1.0-blueviolet"/>
+  <img alt="devkit: v1.1.0" src="https://img.shields.io/badge/devkit-v1.1.0-blueviolet"/>
 </a>
 <a href="#许可说明">
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
@@ -150,7 +150,7 @@ OpenLane-Huawei 数据集是自动驾驶领域用于道路结构感知和推理�
 ## 开发工具
 
 我们提供了一个开发工具来方便社区熟悉并使用 OpenLane-Huawei 数据集。
-可以通过 `openlanv2` 的API实现数据集的使用，例如加载图像、加载元数据和评估结果。
+可以通过 `openlanev2` 的API实现数据集的使用，例如加载图像、加载元数据和评估结果。
 更多开发工具信息请参考[开发工具](./docs/devkit.md)。
 
 
@@ -240,12 +240,18 @@ OpenLane-Huawei 数据集是自动驾驶领域用于道路结构感知和推理�
 使用 OpenLane-Huawei 时请使用如下引用：
   
 ```bibtex
-@misc{ openlanev2_dataset,
-  author = {{OpenLane-V2 Dataset Contributors}},
-  title = {{OpenLane-V2: The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving}},
-  url = {https://github.com/OpenDriveLab/OpenLane-V2},
-  license = {Apache-2.0},
-  year = {2023}
+@inproceedings{wang2023openlanev2,
+  title={OpenLane-V2: A Topology Reasoning Benchmark for Unified 3D HD Mapping}, 
+  author={Wang, Huijie and Li, Tianyu and Li, Yang and Chen, Li and Sima, Chonghao and Liu, Zhenbo and Wang, Bangjun and Jia, Peijin and Wang, Yuting and Jiang, Shengyin and Wen, Feng and Xu, Hang and Luo, Ping and Yan, Junchi and Zhang, Wei and Li, Hongyang},
+  booktitle={NeurIPS},
+  year={2023}
+}
+
+@article{li2023toponet,
+  title={Graph-based Topology Reasoning for Driving Scenes},
+  author={Li, Tianyu and Chen, Li and Wang, Huijie and Li, Yang and Yang, Jiazhi and Geng, Xiangwei and Jiang, Shengyin and Wang, Yuting and Xu, Hang and Xu, Chunjing and Yan, Junchi and Luo, Ping and Li, Hongyang},
+  journal={arXiv preprint arXiv:2304.05277},
+  year={2023}
 }
 ```
 

@@ -7,7 +7,7 @@
   <img alt="OpenLane-v2: v1.0" src="https://img.shields.io/badge/OpenLane--V2-v1.0-blueviolet"/>
 </a>
 <a href="#devkit">
-  <img alt="devkit: v1.0.0" src="https://img.shields.io/badge/devkit-v1.0.0-blueviolet"/>
+  <img alt="devkit: v1.1.0" src="https://img.shields.io/badge/devkit-v1.1.0-blueviolet"/>
 </a>
 <a href="#license">
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
@@ -236,10 +236,17 @@ Options can be passed to enable supported functions during evaluation (`--eval *
 Please use the following citation when referencing OpenLane-V2:
 
 ```bibtex
-@article{wang2023openlanev2,
-  title={OpenLane-V2: A Topology Reasoning Benchmark for Scene Understanding in Autonomous Driving}, 
-  author={Wang, Huijie and Li, Tianyu and Li, Yang and Chen, Li and Sima, Chonghao and Liu, Zhenbo and Wang, Yuting and Jiang, Shengyin and Jia, Peijin and Wang, Bangjun and Wen, Feng and Xu, Hang and Luo, Ping and Yan, Junchi and Zhang, Wei and Li, Hongyang},
-  journal={arXiv preprint arXiv:2304.10440},
+@inproceedings{wang2023openlanev2,
+  title={OpenLane-V2: A Topology Reasoning Benchmark for Unified 3D HD Mapping}, 
+  author={Wang, Huijie and Li, Tianyu and Li, Yang and Chen, Li and Sima, Chonghao and Liu, Zhenbo and Wang, Bangjun and Jia, Peijin and Wang, Yuting and Jiang, Shengyin and Wen, Feng and Xu, Hang and Luo, Ping and Yan, Junchi and Zhang, Wei and Li, Hongyang},
+  booktitle={NeurIPS},
+  year={2023}
+}
+
+@article{li2023toponet,
+  title={Graph-based Topology Reasoning for Driving Scenes},
+  author={Li, Tianyu and Chen, Li and Wang, Huijie and Li, Yang and Yang, Jiazhi and Geng, Xiangwei and Jiang, Shengyin and Wang, Yuting and Xu, Hang and Xu, Chunjing and Yan, Junchi and Luo, Ping and Li, Hongyang},
+  journal={arXiv preprint arXiv:2304.05277},
   year={2023}
 }
 ```
