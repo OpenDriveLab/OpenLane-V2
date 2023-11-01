@@ -52,6 +52,14 @@ We are happy to announce an important update to the OpenLane family, featuring t
 
 ## News
 
+> Note
+> 
+> The difference between `v1.x` and `v2.x` is that we updated APIs and materials on lane segment and SD map in `v2.x`.
+>
+> ❗️Update on **evaluation metrics** led to differences in TOP scores between `vx.1` ([`v1.1`](https://github.com/OpenDriveLab/OpenLane-V2/releases/tag/v1.1.0), [`v2.1`](https://github.com/OpenDriveLab/OpenLane-V2/releases/tag/v2.1.0)) and `vx.0` (`v1.0`, `v2.0`).
+> We encourage the use of **`vx.1`** metrics.
+> For more details please see issue [#76](https://github.com/OpenDriveLab/OpenLane-V2/issues/76).
+
 - **`2023/11/01`** Devkit `v2.1.0` and `v1.1.0` released.
 - **`2023/08/28`** Dataset `subset_B` released.
 - **`2023/07/21`** Dataset `v2.0` and Devkit `v2.0.0` released.
