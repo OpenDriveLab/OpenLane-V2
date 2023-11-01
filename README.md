@@ -7,7 +7,7 @@
   <img alt="OpenLane-v2: v2.0" src="https://img.shields.io/badge/OpenLane--V2-v2.0-blueviolet"/>
 </a>
 <a href="/docs/getting_started.md">
-  <img alt="devkit: v2.0.0" src="https://img.shields.io/badge/devkit-v2.0.0-blueviolet"/>
+  <img alt="devkit: v2.1.0" src="https://img.shields.io/badge/devkit-v2.1.0-blueviolet"/>
 </a>
 <a href="#license--citation">
   <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
@@ -52,6 +52,7 @@ We are happy to announce an important update to the OpenLane family, featuring t
 
 ## News
 
+- **`2023/11/01`** Devkit `v2.1.0` and `v1.1.0` released.
 - **`2023/08/28`** Dataset `subset_B` released.
 - **`2023/07/21`** Dataset `v2.0` and Devkit `v2.0.0` released.
 - **`2023/07/05`** The [test server of OpenLane Topology](https://eval.ai/web/challenges/challenge-page/1925/overview) is re-opened.
