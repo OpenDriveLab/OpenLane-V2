@@ -103,6 +103,15 @@ The **diversity** of data enables models to generalize in different atmospheres 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Task
+
+> Note
+> 
+> The difference between `v1.x` and `v2.x` is that we updated APIs and materials on lane segment and SD map in `v2.x`.
+>
+> ❗️Update on **evaluation metrics** led to differences in TOP scores between `vx.1` ([`v1.1`](https://github.com/OpenDriveLab/OpenLane-V2/releases/tag/v1.1.0), [`v2.1`](https://github.com/OpenDriveLab/OpenLane-V2/releases/tag/v2.1.0)) and `vx.0` (`v1.0`, `v2.0`).
+> We encourage the use of **`vx.1`** metrics.
+> For more details please see issue [#76](https://github.com/OpenDriveLab/OpenLane-V2/issues/76).
+
 The primary task of the dataset is **scene structure perception and reasoning**, which requires the model to recognize the dynamic drivable states of lanes in the surrounding environment. 
 The challenge of this dataset includes not only detecting lane centerlines and traffic elements but also recognizing the attribute of traffic elements and topology relationships on detected objects.
 We define the **[OpenLane-V2 Score (OLS)](./docs/metrics.md#openlane-v2-score)**, which is the average of various metrics covering different aspects of the primary task:
