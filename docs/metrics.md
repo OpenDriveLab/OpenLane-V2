@@ -1,5 +1,11 @@
 # Metrics
 
+> Note
+>
+> ❗️Update on **evaluation metrics** led to differences in TOP scores between `vx.1` ([`v1.1`](https://github.com/OpenDriveLab/OpenLane-V2/releases/tag/v1.1.0), [`v2.1`](https://github.com/OpenDriveLab/OpenLane-V2/releases/tag/v2.1.0)) and `vx.0` (`v1.0`, `v2.0`).
+> We encourage the use of **`vx.1`** metrics.
+> For more details please see issue [#76](https://github.com/OpenDriveLab/OpenLane-V2/issues/76).
+
 ## Driving Scene Topology
 We define the **OpenLane-V2 UniScore (OLUS)**, which is the average of various metrics covering different aspects of the primary task:
 
