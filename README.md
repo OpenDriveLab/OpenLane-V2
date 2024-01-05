@@ -1,17 +1,11 @@
-<div id="top" align="center">
+<img width="808" alt="image" src="https://github.com/OpenDriveLab/OpenLane-V2/assets/39691156/52e487ff-1fe4-49a7-91ce-ef60d615683d"><div id="top" align="center">
 
 # OpenLane-V2
 **The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving.**
 
-<a href="/data">
-  <img alt="OpenLane-v2: v2.0" src="https://img.shields.io/badge/OpenLane--V2-v2.0-blueviolet"/>
-</a>
-<a href="/docs/getting_started.md">
-  <img alt="devkit: v2.1.0" src="https://img.shields.io/badge/devkit-v2.1.0-blueviolet"/>
-</a>
-<a href="#license--citation">
-  <img alt="License: Apache2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg"/>
-</a>
+[![OpenLane-V2](https://img.shields.io/badge/OpenLane--V2-v2.0-blueviolet)](/data)
+[![devkit](https://img.shields.io/badge/devkit-v2.1.0-blueviolet)](/docs/getting_started.md)
+[![LICENSE](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](#license--citation)
 
 <!-- **English | [中文](./README-zh-hans.md)**
 
