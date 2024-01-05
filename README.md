@@ -1,4 +1,4 @@
-<img width="808" alt="image" src="https://github.com/OpenDriveLab/OpenLane-V2/assets/39691156/52e487ff-1fe4-49a7-91ce-ef60d615683d"><div id="top" align="center">
+<div id="top" align="center">
 
 # OpenLane-V2
 **The World's First Perception and Reasoning Benchmark for Scene Structure in Autonomous Driving.**
