@@ -32,7 +32,7 @@ It is recommended to use provided command line interface (CLI) for acceleration.
 |  | Image (test) | [image_8](https://drive.google.com/file/d/1NS-CuOLYq1l0-AYwSeT13L1yjk-ojrSF/view?usp=drive_link) | [image_8](https://pan.baidu.com/s/11yKRL3yonLaG3X4fg0BrZg?pwd=qtt3) | 6ecb7a9e866e29ed73d335c2d897f50e | ~5.4G |
 
 > - `OpenLane-V2` contains annotations for the initial task of OpenLane Topology.
-> - `Map Element Bucket` contains annotations for the task of Driving Scene Topology.
+> - `Map Element Bucket` contains annotations for the task of Driving Scene Topology. :fire: `For CVPR 2024 AGC Track Mapless Driving!`
 > - `Image` and `SD Map` serves as sensor inputs.
 
 For files in Google Drive, you can use the following command by replacing `[FILE_ID]` and `[FILE_NAME]` accordingly:

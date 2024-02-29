@@ -14,15 +14,25 @@ _In terms of ambiguity, the English version shall prevail._ -->
 </div>
 
 > - [Paper](https://openreview.net/forum?id=OMOOO3ls6g) (Accepted at NeurIPS 2023 Track Datasets and Benchmarks)
-> - [CVPR 2023 Autonomous Driving Challenge  - OpenLane Topology Track](https://opendrivelab.com/AD23Challenge.html#openlane_topology)
-> - Point of contact: [Huijie (王晖杰)](mailto:wanghuijie@pjlab.org.cn) or [sephy.fine@gmail.com](mailto:sephy.fine@gmail.com)
+> - [CVPR 2023 Autonomous Driving Challenge - OpenLane Topology Track](https://opendrivelab.com/challenge2023/#openlane_topology)
+> - Point of contact: [Huijie (王晖杰)](mailto:wanghuijie@pjlab.org.cn) or [Tianyu (李天羽)](mailto:litianyu@pjlab.org.cn)
+
+## CVPR 2024 AGC Track Mapless Driving
+
+> - Official website: [:globe_with_meridians: AGC2024](https://opendrivelab.com/challenge2024/#mapless_driving)
+> - Evaluation server: [:hugs: Hugging Face](https://huggingface.co/spaces/AGC2024/mapless-driving-2024) :
+
+:fire: Welcome to track mapless driving of the [Autonomous Grand Challenge](https://opendrivelab.com/challenge2024) in CVPR 2024!
+
+Autonomous driving without HD maps demands a higher level of active scene understanding. This challenge aims to explore the boundaries of scene reasoning capabilities. Neural networks take **multi-view images and Standard-definition (SD) Map** as input, then provide not only perception results of lanes and traffic elements but also topology relationships among lanes and between lanes and traffic elements simultaneously.
 
 
 ## Introducing `OpenLane-V2 Update`
 
 We are happy to announce an important update to the OpenLane family, featuring two sets of additional data and annotations.
 
-- **`Map Element Bucket`.** We provide a diverse span of road elements (as a `bucket`) to build the driving scene - on par with all elements in HD Map. Armed with the newly introduced [**lane segment**](/docs/features.md#map-element-bucket) representations, we unify various map elements to incorporate comprehensive aspects of the captured static scenes to empower [DriveAGI](https://github.com/OpenDriveLab/DriveAGI). 
+- **`Map Element Bucket`.** We provide a diverse span of road elements (as a `bucket`) to build the driving scene - on par with all elements in HD Map. Armed with the newly introduced [**lane segment**](/docs/features.md#map-element-bucket) representations, we unify various map elements to incorporate comprehensive aspects of the captured static scenes to empower [DriveAGI](https://github.com/OpenDriveLab/DriveAGI).  
+:bell: The proposed **lane segment** representation is published with [**LaneSegNet**](https://github.com/OpenDriveLab/LaneSegNet) in ICLR 2024!
 
 <p align="center">
   <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/77846f69-fe77-45aa-b769-e85fd98a0596" width="696px">
@@ -54,6 +64,7 @@ We are happy to announce an important update to the OpenLane family, featuring t
 > We encourage the use of **`vx.1`** metrics.
 > For more details please see issue [#76](https://github.com/OpenDriveLab/OpenLane-V2/issues/76).
 
+- **`2024/03/01`** We are hosting **CVPR 2024 Autonomous Grand Challenge**.
 - **`2023/11/01`** Devkit `v2.1.0` and `v1.1.0` released.
 - **`2023/08/28`** Dataset `subset_B` released.
 - **`2023/07/21`** Dataset `v2.0` and Devkit `v2.0.0` released.
@@ -69,6 +80,8 @@ We are happy to announce an important update to the OpenLane family, featuring t
 ## Task and Evaluation
 
 ### Driving Scene Topology
+:fire: `For CVPR 2024 AGC Track Mapless Driving!`
+
 Given sensor inputs, lane segments are required to be perceived, instead of lane centerlines in the task of OpenLane Topology.
 Besides, pedestrian crossings and road boundaries are also desired to build a comprehensive understanding of the driving scenes.
 The [OpenLane-V2 UniScore (OLUS)](docs/metrics.md#driving-scene-topology) is utilized  to summarize model performance in all aspects.
@@ -82,16 +95,18 @@ In this task, we use [OpenLane-V2 Score (OLS)](docs/metrics.md#openlane-topology
 
 ## Leaderboard
 
-### Upcoming Challenge in 2024
+### CVPR 2024 AGC Mapless Driving
 
-We plan to release a trailer version of the upcoming challenge. Please stay tuned for more details in `Late August`.
+- Challenge website: [CVPR24AGC](https://opendrivelab.com/challenge2024/#mapless_driving)
+- Evaluation Server: [Hugging Face](https://huggingface.co/spaces/AGC2024/mapless-driving-2024)
 
-- Challenge website: [AD24Challenge](https://opendrivelab.com/AD24Challenge.html) 
+This is the ongoing challenge on CVPR2024, the leaderboard and the testserver will be open in `late March`!
+
 
 ### OpenLane Topology Challenge at CVPR 2023 (Server remains `active`)
-We maintain a [leaderboard](https://opendrivelab.com/AD23Challenge.html#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
+We maintain a [leaderboard](https://opendrivelab.com/challenge2023/#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
 
-- Challenge website: [AD23Challenge](https://opendrivelab.com/AD23Challenge.html#openlane_topology)
+- Challenge website: [AD23Challenge](https://opendrivelab.com/challenge2023/#openlane_topology)
 
 ![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
@@ -245,6 +260,13 @@ Please use the following citation when referencing OpenLane-V2:
   journal={arXiv preprint arXiv:2304.05277},
   year={2023}
 }
+
+@inproceedings{li2023lanesegnet,
+  title={LaneSegNet: Map Learning with Lane Segment Perception for Autonomous Driving},
+  author={Li, Tianyu and Jia, Peijin and Wang, Bangjun and Chen, Li and Jiang, Kun and Yan, Junchi and Li, Hongyang},
+  booktitle={ICLR},
+  year={2024}
+}
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -254,7 +276,7 @@ Please use the following citation when referencing OpenLane-V2:
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 - [DriveAGI](https://github.com/OpenDriveLab/DriveAGI) | [DriveLM](https://github.com/OpenDriveLab/DriveLM) | [OpenScene](https://github.com/OpenDriveLab/OpenScene)
-- [TopoNet](https://github.com/OpenDriveLab/TopoNet)
+- [TopoNet](https://github.com/OpenDriveLab/TopoNet) | [LaneSegNet](https://github.com/OpenDriveLab/LaneSegNet)
 - [PersFormer](https://github.com/OpenDriveLab/PersFormer_3DLane) | [OpenLane](https://github.com/OpenDriveLab/OpenLane)
 - [BEV Perception Survey & Recipe](https://github.com/OpenDriveLab/BEVPerception-Survey-Recipe) | [BEVFormer](https://github.com/fundamentalvision/BEVFormer)
 
