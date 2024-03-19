@@ -19,13 +19,15 @@ _In terms of ambiguity, the English version shall prevail._ -->
 
 ## CVPR 2024 AGC Track Mapless Driving
 
-> - Official website: [:globe_with_meridians: AGC2024](https://opendrivelab.com/challenge2024/#mapless_driving)
-> - Evaluation server: [:hugs: Hugging Face](https://huggingface.co/spaces/AGC2024/mapless-driving-2024) :
+> - Official website: :globe_with_meridians: [AGC2024](https://opendrivelab.com/challenge2024/#mapless_driving)
+> - Evaluation server: :hugs: [Hugging Face](https://huggingface.co/spaces/AGC2024/mapless-driving-2024)
 
 :fire: Welcome to track mapless driving of the [Autonomous Grand Challenge](https://opendrivelab.com/challenge2024) in CVPR 2024!
 
 Autonomous driving without HD maps demands a higher level of active scene understanding. This challenge aims to explore the boundaries of scene reasoning capabilities. Neural networks take **multi-view images and Standard-definition (SD) Map** as input, then provide not only perception results of lanes and traffic elements but also topology relationships among lanes and between lanes and traffic elements simultaneously.
 
+- [Getting Started](#getting-started)
+- [Baseline](https://github.com/OpenDriveLab/LaneSegNet)
 
 ## Introducing `OpenLane-V2 Update`
 

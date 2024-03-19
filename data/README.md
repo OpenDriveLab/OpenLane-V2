@@ -5,6 +5,13 @@
 The files mentioned below can also be downloaded via [OpenDataLab](https://openxlab.org.cn/datasets/OpenDriveLab/OpenLane-V2).
 It is recommended to use provided command line interface (CLI) for acceleration.
 
+:fire: For `CVPR 2024 AGC Track Mapless Driving!`, please download:
+
+- `Map Element Bucket` info of subset_A 
+- All `image` of subset_A
+- SDMap of subset_A (optional)
+
+
 | Subset | Split | Google Drive <img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="Google Drive" width="18"/> | Baidu Yun <img src="https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico" alt="Baidu Yun" width="18"/> | md5 | Size |
 | --- | --- | --- | --- | --- | --- |
 | sample | OpenLane-V2 |[sample](https://drive.google.com/file/d/1Ni-L6u1MGKJRAfUXm39PdBIxdk_ntdc6/view?usp=share_link) | [sample](https://pan.baidu.com/s/1ncqwDtuihKTBZROL5vdCAQ?pwd=psev) | 21c607fa5a1930275b7f1409b25042a0 | ~300M |
@@ -32,7 +39,7 @@ It is recommended to use provided command line interface (CLI) for acceleration.
 |  | Image (test) | [image_8](https://drive.google.com/file/d/1NS-CuOLYq1l0-AYwSeT13L1yjk-ojrSF/view?usp=drive_link) | [image_8](https://pan.baidu.com/s/11yKRL3yonLaG3X4fg0BrZg?pwd=qtt3) | 6ecb7a9e866e29ed73d335c2d897f50e | ~5.4G |
 
 > - `OpenLane-V2` contains annotations for the initial task of OpenLane Topology.
-> - `Map Element Bucket` contains annotations for the task of Driving Scene Topology. :fire: `For CVPR 2024 AGC Track Mapless Driving!`
+> - `Map Element Bucket` contains annotations for the task of Driving Scene Topology.
 > - `Image` and `SD Map` serves as sensor inputs.
 
 For files in Google Drive, you can use the following command by replacing `[FILE_ID]` and `[FILE_NAME]` accordingly:
