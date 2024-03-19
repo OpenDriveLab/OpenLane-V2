@@ -247,3 +247,12 @@ In the Map Element Bucket, we reformulate the annotation files to include additi
     'topology_lste':                        <float> [n, k] -- adjacent matrix between lane segments and traffic elements
 }
 ```
+
+- `id` is the identifier of a lane segment or traffic element and is consistent in a sequence.
+For predictions, it can be randomly assigned but unique in a single frame.
+- `topology_lsls` and `topology_lste` are adjacent matrices, where row and column are sorted according to the order of the lists `lane_segment` and `traffic_element`. 
+It is a MUST to keep the ordering the same for correct evaluation. 
+For ground truth, only 0 or 1 is a valid boolean value for an element in the matrix. 
+For predictions, the value varies from 0 to 1, representing the confidence of the predicted relationship. 
+- `#lane_segment` and `#traffic_element` are not required to be equal between ground truth and predictions. 
+In the process of evaluation, a matching of ground truth and predictions is determined.
