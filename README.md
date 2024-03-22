@@ -28,6 +28,7 @@ Autonomous driving without HD maps demands a higher level of active scene unders
 
 - [Getting Started](#getting-started)
 - [Baseline](https://github.com/OpenDriveLab/LaneSegNet)
+- [Submission Instruction](/docs/submission.md#guide-for-cvpr-2024-agc)
 
 ## Introducing `OpenLane-V2 Update`
 

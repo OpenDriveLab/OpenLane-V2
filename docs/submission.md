@@ -9,6 +9,8 @@
 
 ## Guide for CVPR 2024 AGC
 :fire: `CVPR 2024 AGC Track Mapless Driving`
+> - Official website: :globe_with_meridians: [AGC2024](https://opendrivelab.com/challenge2024/#mapless_driving)
+> - Evaluation server: :hugs: [Hugging Face](https://huggingface.co/spaces/AGC2024/mapless-driving-2024)
 
 ### Driving Scene Topology
 
@@ -73,10 +75,13 @@ The submitted results of `OpenLane-V2 subset-A test` are required to be stored i
 
 ## China3DV 2024 比赛提交说明
 :fire: `China3DV 2024 无图驾驶 赛道`
+> - 官方网站: :globe_with_meridians: [China3DV](http://www.csig3dv.net/2024/competition.html)
+> - 评测服务器: :hugs: [Hugging Face](https://huggingface.co/spaces/China3DV/mapless-driving-2024)
 
 ### 提交结果标准格式
 
-参赛队伍需要将`OpenLane-V2 subset-A test`的预测结果保存在二进制格式的`pickle`文件中，提交结果应当遵从以下结构：（其中`results`对应的值为一个字典，包括帧标识符和对应的[预测结果格式](/data/README.md#map-element-bucket)。
+参赛队伍需要将`OpenLane-V2 subset-A test`的预测结果保存在二进制格式的`pickle`文件中。文件名称强制为`submission.pkl`。  
+提交结果应当遵从以下结构，其中`results`对应的值为一个字典，包括帧标识符和对应的[预测结果格式](/data/README.md#map-element-bucket)。
 
 ```
 {
@@ -128,11 +133,23 @@ The submitted results of `OpenLane-V2 subset-A test` are required to be stored i
 - 预测中`lane segment`与`area`内的点数量不做限制。但我们推荐将`lane segment`设置为`10`个点，将`area`设置为`20`个点以与真实标签对齐。
 - 我们推荐在保存预测文件前，将所有`float`转换为`np.float16`以缩减文件体积。
 
+### 提交前测试
+Hugging Face 竞赛服务器受安全因素限制，不会返回任何报错信息。请参赛者在提交前在本地保存验证集结果并进行测试。
+
+``` python
+from openlanev2.lanesegment.evaluation.evaluate import evaluate
+
+metrics = evaluate(
+    ground_truth='data/OpenLane-V2/data_dict_subset_A_val_ls.pkl', 
+    predictions='/path/to/submission.pkl'
+)
+print(metrics)
+```
+
 
 ### 提交结果
 1. 按上述格式保存结果.
-2. 点击[**赛道空间**](https://huggingface.co/spaces/AGC2024/mapless-driving-2024)左侧栏中的 **Submission Information** 标签页，根据其中的指示完成后续提交过程。 
-
+2. 点击[**赛道空间**](https://huggingface.co/spaces/China3DV/mapless-driving-2024)左侧栏中的 **Submission Information** 标签页，根据其中的指示完成后续提交过程。 
 
 
 ## Submission Guide for CVPR 2023 Challenge
