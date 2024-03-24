@@ -66,6 +66,18 @@ The submitted results of `OpenLane-V2 subset-A test` are required to be stored i
 - The `#points` of lane segment and area could be various. But we recommend `10` for each line in lane segment and `20` for area to keep align with ground truth.
 - We recommend astype all `float` to `np.float16` to reduce the submission file size.
 
+### Test before submission
+Hugging Face server will not return any detailed error if submission failed. Please test the submission file of `val` set before submit.
+
+``` python
+from openlanev2.lanesegment.evaluation.evaluate import evaluate
+
+metrics = evaluate(
+    ground_truth='data/OpenLane-V2/data_dict_subset_A_val_ls.pkl', 
+    predictions='/path/to/submission.pkl'
+)
+print(metrics)
+```
 
 ### Steps
 1. Register for your team by filling in this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSctm2iipw5r1_wY-kVt7X-4RRynnt3ZzYMzaBVzEpNStoc-rQ/viewform).
