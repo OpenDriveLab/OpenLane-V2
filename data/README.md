@@ -123,7 +123,7 @@ Each file is formatted as follows:
     'sensor': {
         [camera]: {                         <str> -- name of the camera
             'image_path':                   <str> -- image path
-            'extrinsic':                    <dict> -- extrinsic parameters of the camera
+            'extrinsic':                    <dict> -- extrinsic parameters of the camera, trasformation from camera frame to vehicle frame
             'intrinsic':                    <dict> -- intrinsic parameters of the camera
         },
         ...
