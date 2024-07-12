@@ -17,19 +17,6 @@ _In terms of ambiguity, the English version shall prevail._ -->
 > - [CVPR 2023 Autonomous Driving Challenge - OpenLane Topology Track](https://opendrivelab.com/challenge2023/#openlane_topology)
 > - Point of contact: [Huijie (王晖杰)](mailto:wanghuijie@pjlab.org.cn) or [Tianyu (李天羽)](mailto:litianyu@pjlab.org.cn)
 
-## CVPR 2024 AGC Track Mapless Driving
-
-> - Official website: :globe_with_meridians: [AGC2024](https://opendrivelab.com/challenge2024/#mapless_driving)
-> - Evaluation server: :hugs: [Hugging Face](https://huggingface.co/spaces/AGC2024/mapless-driving-2024)
-
-:fire: Welcome to track mapless driving of the [Autonomous Grand Challenge](https://opendrivelab.com/challenge2024) in CVPR 2024!
-
-Autonomous driving without HD maps demands a higher level of active scene understanding. This challenge aims to explore the boundaries of scene reasoning capabilities. Neural networks take **multi-view images and Standard-definition (SD) Map** as input, then provide not only perception results of lanes and traffic elements but also topology relationships among lanes and between lanes and traffic elements simultaneously.
-
-- [Getting Started](#getting-started)
-- [Baseline](https://github.com/OpenDriveLab/LaneSegNet)
-- [Submission Instruction](/docs/submission.md#guide-for-cvpr-2024-agc)
-
 ## Introducing `OpenLane-V2 Update`
 
 We are happy to announce an important update to the OpenLane family, featuring two sets of additional data and annotations.
@@ -67,12 +54,13 @@ We are happy to announce an important update to the OpenLane family, featuring t
 > We encourage the use of **`vx.1`** metrics.
 > For more details please see issue [#76](https://github.com/OpenDriveLab/OpenLane-V2/issues/76).
 
+- **`2024/06/01`** The [Autonomous Grand Challenge](https://opendrivelab.com/challenge2024/#mapless_driving) wraps up.
 - **`2024/03/01`** We are hosting **CVPR 2024 Autonomous Grand Challenge**.
 - **`2023/11/01`** Devkit `v2.1.0` and `v1.1.0` released.
 - **`2023/08/28`** Dataset `subset_B` released.
 - **`2023/07/21`** Dataset `v2.0` and Devkit `v2.0.0` released.
 - **`2023/07/05`** The [test server of OpenLane Topology](https://eval.ai/web/challenges/challenge-page/1925/overview) is re-opened.
-- **`2023/06/01`** The [Challenge at the CVPR 2023 Workshop](https://opendrivelab.com/AD23Challenge.html) wraps up.
+- **`2023/06/01`** The [Challenge at the CVPR 2023 Workshop](https://opendrivelab.com/challenge2023/#openlane_topology) wraps up.
 - **`2023/04/21`** A baseline based on [InternImage](https://github.com/OpenGVLab/InternImage) released. Check out [here](https://github.com/OpenGVLab/InternImage/tree/master/autonomous_driving/openlane-v2).
 - **`2023/04/20`** [OpenLane-V2 paper](https://arxiv.org/abs/2304.10440) is available on arXiv.
 - **`2023/02/15`** Dataset `v1.0`, Devkit `v1.0.0`, and baseline model released.
@@ -98,18 +86,17 @@ In this task, we use [OpenLane-V2 Score (OLS)](docs/metrics.md#openlane-topology
 
 ## Leaderboard
 
-### CVPR 2024 AGC Mapless Driving
+### Mapless Driving at CVPR 2024 AGC
 
-- Challenge website: [CVPR24AGC](https://opendrivelab.com/challenge2024/#mapless_driving)
-- Evaluation Server: [Hugging Face](https://huggingface.co/spaces/AGC2024/mapless-driving-2024)
+- [Challenge 2024](https://opendrivelab.com/challenge2024/#mapless_driving)
 
-This is the ongoing challenge on CVPR2024, the leaderboard and the testserver will be open in `late March`!
+![image](https://github.com/user-attachments/assets/2ef60d09-c875-4891-abbc-c2400ab0a283)
 
 
 ### OpenLane Topology Challenge at CVPR 2023 (Server remains `active`)
 We maintain a [leaderboard](https://opendrivelab.com/challenge2023/#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
 
-- Challenge website: [AD23Challenge](https://opendrivelab.com/challenge2023/#openlane_topology)
+- [Challenge 2023](https://opendrivelab.com/challenge2023/#openlane_topology)
 
 ![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
