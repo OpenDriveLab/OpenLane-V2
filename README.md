@@ -5,7 +5,8 @@
 
 [![OpenLane-V2](https://img.shields.io/badge/OpenLane--V2-v2.0-blueviolet)](/data)
 [![devkit](https://img.shields.io/badge/devkit-v2.1.0-blueviolet)](/docs/getting_started.md)
-[![LICENSE](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](#license--citation)
+[![LICENSE](https://img.shields.io/badge/license-Apache%202.0-blue)](#license--citation)
+[![testserver](https://img.shields.io/badge/Test%20Server-%F0%9F%A4%97-ffc107)](https://huggingface.co/spaces/AGC2024/mapless-driving-2024)
 
 <!-- **English | [中文](./README-zh-hans.md)**
 
@@ -15,6 +16,7 @@ _In terms of ambiguity, the English version shall prevail._ -->
 
 > - [Paper](https://openreview.net/forum?id=OMOOO3ls6g) (Accepted at NeurIPS 2023 Track Datasets and Benchmarks)
 > - [CVPR 2023 Autonomous Driving Challenge - OpenLane Topology Track](https://opendrivelab.com/challenge2023/#openlane_topology)
+> - [CVPR 2024 Autonomous Grand Challenge - Mapless Driving Track](https://opendrivelab.com/challenge2024/#mapless_driving)
 > - Point of contact: [Huijie (王晖杰)](mailto:wanghuijie@pjlab.org.cn) or [Tianyu (李天羽)](mailto:litianyu@pjlab.org.cn)
 
 ## Introducing `OpenLane-V2 Update`
