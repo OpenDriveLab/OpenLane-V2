@@ -19,27 +19,28 @@ _In terms of ambiguity, the English version shall prevail._ -->
 > - [CVPR 2024 Autonomous Grand Challenge - Mapless Driving Track](https://opendrivelab.com/challenge2024/#mapless_driving)
 > - Point of contact: [Huijie (王晖杰)](mailto:wanghuijie@pjlab.org.cn) or [Tianyu (李天羽)](mailto:litianyu@pjlab.org.cn)
 
-## Introducing `OpenLane-V2 Update`
+## Leaderboard
 
-We are happy to announce an important update to the OpenLane family, featuring two sets of additional data and annotations.
+### Mapless Driving at CVPR 2024 AGC (Server remains `active`)
+We maintain a [leaderboard](https://opendrivelab.com/challenge2024/#mapless_driving) and [test server](https://huggingface.co/spaces/AGC2024/mapless-driving-2024). If you wish to add new / modify results to the leaderboard, please drop us an email.
 
-- **`Map Element Bucket`.** We provide a diverse span of road elements (as a `bucket`) to build the driving scene - on par with all elements in HD Map. Armed with the newly introduced [**lane segment**](/docs/features.md#map-element-bucket) representations, we unify various map elements to incorporate comprehensive aspects of the captured static scenes to empower [DriveAGI](https://github.com/OpenDriveLab/DriveAGI).  
-:bell: The proposed **lane segment** representation is published with [**LaneSegNet**](https://github.com/OpenDriveLab/LaneSegNet) in ICLR 2024!
+- [Challenge 2024](https://opendrivelab.com/challenge2024/#mapless_driving)
 
-<p align="center">
-  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/77846f69-fe77-45aa-b769-e85fd98a0596" width="696px">
-</p>
+![image](https://github.com/user-attachments/assets/2ef60d09-c875-4891-abbc-c2400ab0a283)
 
--  **`Standard-definition (SD) Map`.** As a new sensor input, [**SD Map**](/docs/features.md#sd-map) supplements multi-view images with topological and positional priors to strengthen structural acknowledge in the neural networks.
 
-<p align="center">
-  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/0b3f4678-fa57-4187-afd6-e55db12a76a6" width="696px">
-</p>
+### OpenLane Topology Challenge at CVPR 2023 (Server remains `active`)
+We maintain a [leaderboard](https://opendrivelab.com/challenge2023/#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
+
+- [Challenge 2023](https://opendrivelab.com/challenge2023/#openlane_topology)
+
+![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
+
 
 ## Table of Contents
 - [News](#news)
+- [Introducing `OpenLane-V2 Update`](#introducing-openlane-v2-update)
 - [Task and Evaluation](#task-and-evaluation)
-- [Leaderboard](#leaderboard)
 - [Highlights](#highlights-of-openlane-v2)
 - [Getting Started](#getting-started)
 - [License & Citation](#license--citation)
@@ -70,6 +71,25 @@ We are happy to announce an important update to the OpenLane family, featuring t
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Introducing `OpenLane-V2 Update`
+
+We are happy to announce an important update to the OpenLane family, featuring two sets of additional data and annotations.
+
+- **`Map Element Bucket`.** We provide a diverse span of road elements (as a `bucket`) to build the driving scene - on par with all elements in HD Map. Armed with the newly introduced [**lane segment**](/docs/features.md#map-element-bucket) representations, we unify various map elements to incorporate comprehensive aspects of the captured static scenes to empower [DriveAGI](https://github.com/OpenDriveLab/DriveAGI).  
+:bell: The proposed **lane segment** representation is published with [**LaneSegNet**](https://github.com/OpenDriveLab/LaneSegNet) in ICLR 2024!
+
+<p align="center">
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/77846f69-fe77-45aa-b769-e85fd98a0596" width="696px">
+</p>
+
+-  **`Standard-definition (SD) Map`.** As a new sensor input, [**SD Map**](/docs/features.md#sd-map) supplements multi-view images with topological and positional priors to strengthen structural acknowledge in the neural networks.
+
+<p align="center">
+  <img src="https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/0b3f4678-fa57-4187-afd6-e55db12a76a6" width="696px">
+</p>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Task and Evaluation
 
 ### Driving Scene Topology
@@ -82,25 +102,6 @@ The [OpenLane-V2 UniScore (OLUS)](docs/metrics.md#driving-scene-topology) is uti
 ### OpenLane Topology
 Given sensor inputs, participants are required to deliver not only perception results of lanes and traffic elements but also topology relationships among lanes and between lanes and traffic elements simultaneously.
 In this task, we use [OpenLane-V2 Score (OLS)](docs/metrics.md#openlane-topology) to evaluate model performance.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-## Leaderboard
-
-### Mapless Driving at CVPR 2024 AGC
-
-- [Challenge 2024](https://opendrivelab.com/challenge2024/#mapless_driving)
-
-![image](https://github.com/user-attachments/assets/2ef60d09-c875-4891-abbc-c2400ab0a283)
-
-
-### OpenLane Topology Challenge at CVPR 2023 (Server remains `active`)
-We maintain a [leaderboard](https://opendrivelab.com/challenge2023/#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
-
-- [Challenge 2023](https://opendrivelab.com/challenge2023/#openlane_topology)
-
-![image](https://github.com/OpenDriveLab/OpenLane-V2/assets/29263416/4c1d7dc5-ce00-40de-8907-71060b6ca2f9)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
