@@ -14,7 +14,7 @@ _In terms of ambiguity, the English version shall prevail._ -->
 
 </div>
 
-> - [Paper](https://openreview.net/forum?id=OMOOO3ls6g) (Accepted at NeurIPS 2023 Track Datasets and Benchmarks)
+> - [Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/3c0a4c8c236144f1b99b7e1531debe9c-Abstract-Datasets_and_Benchmarks.html) (Accepted at NeurIPS 2023 Track Datasets and Benchmarks)
 > - [CVPR 2023 Autonomous Driving Challenge - OpenLane Topology Track](https://opendrivelab.com/challenge2023/#openlane_topology)
 > - [CVPR 2024 Autonomous Grand Challenge - Mapless Driving Track](https://opendrivelab.com/challenge2024/#mapless_driving)
 > - Point of contact: [Huijie (王晖杰)](mailto:wanghuijie@pjlab.org.cn) or [Tianyu (李天羽)](mailto:litianyu@pjlab.org.cn)
