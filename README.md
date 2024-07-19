@@ -22,7 +22,7 @@ _In terms of ambiguity, the English version shall prevail._ -->
 ## Leaderboard
 
 ### Mapless Driving at CVPR 2024 AGC (Server remains `active`)
-We maintain a [leaderboard](https://opendrivelab.com/challenge2024/#mapless_driving) and [test server](https://huggingface.co/spaces/AGC2024/mapless-driving-2024). If you wish to add new / modify results to the leaderboard, please drop us an email.
+We maintain a [leaderboard](https://opendrivelab.com/challenge2024/#mapless_driving) and [test server](https://huggingface.co/spaces/AGC2024/mapless-driving-2024) on the task of **Driving Scene Topology**. If you wish to add new / modify results to the leaderboard, please drop us an email.
 
 - [Challenge 2024](https://opendrivelab.com/challenge2024/#mapless_driving)
 
@@ -30,7 +30,7 @@ We maintain a [leaderboard](https://opendrivelab.com/challenge2024/#mapless_driv
 
 
 ### OpenLane Topology Challenge at CVPR 2023 (Server remains `active`)
-We maintain a [leaderboard](https://opendrivelab.com/challenge2023/#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of scene structure perception and reasoning. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
+We maintain a [leaderboard](https://opendrivelab.com/challenge2023/#openlane_topology) and [test server](https://eval.ai/web/challenges/challenge-page/1925/overview) on the task of **OpenLane Topology**. If you wish to add new / modify results to the leaderboard, please drop us an email following the instructions [here](https://eval.ai/web/challenges/challenge-page/1925/submission).
 
 - [Challenge 2023](https://opendrivelab.com/challenge2023/#openlane_topology)
 
@@ -93,7 +93,6 @@ We are happy to announce an important update to the OpenLane family, featuring t
 ## Task and Evaluation
 
 ### Driving Scene Topology
-:fire: `For CVPR 2024 AGC Track Mapless Driving!`
 
 Given sensor inputs, lane segments are required to be perceived, instead of lane centerlines in the task of OpenLane Topology.
 Besides, pedestrian crossings and road boundaries are also desired to build a comprehensive understanding of the driving scenes.
