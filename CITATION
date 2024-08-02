@@ -43,4 +43,5 @@ preferred-citation:
     - family-names: Li
       given-names: Hongyang
   year: 2023
+  title: "OpenLane-V2: A Topology Reasoning Benchmark for Unified 3D HD Mapping"
   booktitle: "NeurIPS"
