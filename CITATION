@@ -7,3 +7,40 @@ date-released: 2023-01-19
 url: "https://github.com/OpenDriveLab/OpenLane-V2"
 type: dataset
 license: Apache-2.0
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Wang
+      given-names: Huijie
+    - family-names: Li
+      given-names: Tianyu
+    - family-names: Li
+      given-names: Yang
+    - family-names: Chen
+      given-names: Li
+    - family-names: Sima
+      given-names: Chonghao
+    - family-names: Liu
+      given-names: Zhenbo
+    - family-names: Wang
+      given-names: Bangjun
+    - family-names: Jia
+      given-names: Peijin
+    - family-names: Wang
+      given-names: Yuting
+    - family-names: Jiang
+      given-names: Shengyin
+    - family-names: Wen
+      given-names: Feng
+    - family-names: Xu
+      given-names: Hang
+    - family-names: Luo
+      given-names: Ping
+    - family-names: Yan
+      given-names: Junchi
+    - family-names: Zhang
+      given-names: Wei
+    - family-names: Li
+      given-names: Hongyang
+  year: 2023
+  booktitle: "NeurIPS"
