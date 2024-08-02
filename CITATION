@@ -42,6 +42,6 @@ preferred-citation:
       given-names: Wei
     - family-names: Li
       given-names: Hongyang
-  journal: "NeurIPS"
+  conference: "NeurIPS"
   title: "OpenLane-V2: A Topology Reasoning Benchmark for Unified 3D HD Mapping"
   year: 2023
