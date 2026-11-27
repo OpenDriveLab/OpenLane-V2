@@ -71,19 +71,6 @@ def collect(root_path : str, data_dict : dict, collection : str, with_sd_map : b
                 for k, v in meta[identifier]['sensor'][camera][para].items():
                     meta[identifier]['sensor'][camera][para][k] = np.array(v, dtype=np.float64)
 
-        if 'annotation' not in frame:
-            continue
-        for i, area in enumerate(frame['annotation']['area']):
-            meta[identifier]['annotation']['area'][i]['points'] = _fix_pts_interpolate(np.array(area['points']), n_points['area'])
-        for i, lane_segment in enumerate(frame['annotation']['lane_segment']):
-            meta[identifier]['annotation']['lane_segment'][i]['centerline'] = _fix_pts_interpolate(np.array(lane_segment['centerline']), n_points['centerline'])
-            meta[identifier]['annotation']['lane_segment'][i]['left_laneline'] = _fix_pts_interpolate(np.array(lane_segment['left_laneline']), n_points['left_laneline'])
-            meta[identifier]['annotation']['lane_segment'][i]['right_laneline'] = _fix_pts_interpolate(np.array(lane_segment['right_laneline']), n_points['right_laneline'])
-        for i, traffic_element in enumerate(frame['annotation']['traffic_element']):
-            meta[identifier]['annotation']['traffic_element'][i]['points'] = np.array(traffic_element['points'], dtype=np.float32)
-        meta[identifier]['annotation']['topology_lsls'] = np.array(meta[identifier]['annotation']['topology_lsls'], dtype=np.int8)
-        meta[identifier]['annotation']['topology_lste'] = np.array(meta[identifier]['annotation']['topology_lste'], dtype=np.int8)
-
         if with_sd_map:
             split, segment_id, timestamp = identifier
             sd_map = io.json_load(f'{root_path}/{split}/{segment_id}/sdmap.json')
@@ -107,5 +94,18 @@ def collect(root_path : str, data_dict : dict, collection : str, with_sd_map : b
                 elif not road.is_empty:
                     line = np.array(road.coords, dtype=np.float32)
                     meta[identifier]['sensor']['sd_map'][element['category']].append(line)
+
+        if 'annotation' not in frame:
+            continue
+        for i, area in enumerate(frame['annotation']['area']):
+            meta[identifier]['annotation']['area'][i]['points'] = _fix_pts_interpolate(np.array(area['points']), n_points['area'])
+        for i, lane_segment in enumerate(frame['annotation']['lane_segment']):
+            meta[identifier]['annotation']['lane_segment'][i]['centerline'] = _fix_pts_interpolate(np.array(lane_segment['centerline']), n_points['centerline'])
+            meta[identifier]['annotation']['lane_segment'][i]['left_laneline'] = _fix_pts_interpolate(np.array(lane_segment['left_laneline']), n_points['left_laneline'])
+            meta[identifier]['annotation']['lane_segment'][i]['right_laneline'] = _fix_pts_interpolate(np.array(lane_segment['right_laneline']), n_points['right_laneline'])
+        for i, traffic_element in enumerate(frame['annotation']['traffic_element']):
+            meta[identifier]['annotation']['traffic_element'][i]['points'] = np.array(traffic_element['points'], dtype=np.float32)
+        meta[identifier]['annotation']['topology_lsls'] = np.array(meta[identifier]['annotation']['topology_lsls'], dtype=np.int8)
+        meta[identifier]['annotation']['topology_lste'] = np.array(meta[identifier]['annotation']['topology_lste'], dtype=np.int8)
 
     io.pickle_dump(f'{root_path}/{collection}.pkl', meta)
