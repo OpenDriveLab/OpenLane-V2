@@ -65,15 +65,6 @@ def collect(root_path : str, data_dict : dict, collection : str, point_interval 
                 for k, v in meta[identifier]['sensor'][camera][para].items():
                     meta[identifier]['sensor'][camera][para][k] = np.array(v, dtype=np.float64)
 
-        if 'annotation' not in frame:
-            continue
-        for i, lane_centerline in enumerate(frame['annotation']['lane_centerline']):
-            meta[identifier]['annotation']['lane_centerline'][i]['points'] = np.array(lane_centerline['points'][::point_interval], dtype=np.float32)
-        for i, traffic_element in enumerate(frame['annotation']['traffic_element']):
-            meta[identifier]['annotation']['traffic_element'][i]['points'] = np.array(traffic_element['points'], dtype=np.float32)
-        meta[identifier]['annotation']['topology_lclc'] = np.array(meta[identifier]['annotation']['topology_lclc'], dtype=np.int8)
-        meta[identifier]['annotation']['topology_lcte'] = np.array(meta[identifier]['annotation']['topology_lcte'], dtype=np.int8)
-
         if with_sd_map:
             split, segment_id, timestamp = identifier
             sd_map = io.json_load(f'{root_path}/{split}/{segment_id}/sdmap.json')
@@ -97,5 +88,14 @@ def collect(root_path : str, data_dict : dict, collection : str, point_interval 
                 elif not road.is_empty:
                     line = np.array(road.coords, dtype=np.float32)
                     meta[identifier]['sensor']['sd_map'][element['category']].append(line)
+
+        if 'annotation' not in frame:
+            continue
+        for i, lane_centerline in enumerate(frame['annotation']['lane_centerline']):
+            meta[identifier]['annotation']['lane_centerline'][i]['points'] = np.array(lane_centerline['points'][::point_interval], dtype=np.float32)
+        for i, traffic_element in enumerate(frame['annotation']['traffic_element']):
+            meta[identifier]['annotation']['traffic_element'][i]['points'] = np.array(traffic_element['points'], dtype=np.float32)
+        meta[identifier]['annotation']['topology_lclc'] = np.array(meta[identifier]['annotation']['topology_lclc'], dtype=np.int8)
+        meta[identifier]['annotation']['topology_lcte'] = np.array(meta[identifier]['annotation']['topology_lcte'], dtype=np.int8)
 
     io.pickle_dump(f'{root_path}/{collection}.pkl', meta)
